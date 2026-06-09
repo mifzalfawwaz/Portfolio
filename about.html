@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about-hero" class="pt-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div id="about-hero-content" class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-accentSoft text-accent px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border border-indigo-100">
+                        <i class="fa-solid fa-user text-xs"></i>
+                        About Me
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight mb-5">
+                        I'm <span class="text-accent">Mifzal Fawwaz</span>,<br>
+                        <span class="text-3xl sm:text-4xl lg:text-5xl text-muted font-bold">Software Dev Student</span>
+                    </h1>
+                    <p class="text-muted text-lg leading-relaxed mb-6 max-w-xl">
+                        A driven third-year Computer Science student with a passion for building impactful software, thinking entrepreneurially, and sharing everything I learn along the way.
+                    </p>
+                    <p class="text-muted text-base leading-relaxed mb-8 max-w-xl">
+                        I believe that the best way to learn is by building — real products, real users, real feedback. From hackathons to side projects, I'm always shipping code and documenting the journey.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="bg-accent text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all duration-200 flex items-center gap-2 shadow-lg shadow-indigo-200">
+                            <i class="fa-solid fa-file-lines"></i> Download CV
+                        </a>
+                        <a href="#" class="bg-white text-primary border border-border px-6 py-3 rounded-xl font-semibold text-sm hover:bg-highlight hover:border-indigo-200 transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div id="about-hero-visual" class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100">
+                            <img src="images/fawwaz.jpg" alt="Mifzal Fawwaz" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">Currently</p>
+                                <p class="text-sm font-bold text-primary">CS Year 3</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot text-green-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">Based In</p>
+                                <p class="text-sm font-bold text-primary">Pasir Mas, Kelantan</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 bg-accent text-white rounded-2xl shadow-lg px-4 py-3 -translate-y-1/2 hidden lg:block">
+                            <p class="text-xs font-medium opacity-80">GPA</p>
+                            <p class="text-sm font-bold">3.6 / 4.0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quick-facts" class="py-10 bg-surface border-y border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <div id="fact-1" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">3+</p>
+                    <p class="text-sm text-muted font-medium">Years Coding</p>
+                </div>
+                <div id="fact-2" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">12+</p>
+                    <p class="text-sm text-muted font-medium">Projects Built</p>
+                </div>
+                <div id="fact-3" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">5</p>
+                    <p class="text-sm text-muted font-medium">Hackathons Won</p>
+                </div>
+                <div id="fact-4" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">2</p>
+                    <p class="text-sm text-muted font-medium">Startups Founded</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="my-story" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div id="story-content">
+                    <span class="font-mono text-accent text-sm font-semibold">// my story</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 mb-6">How It All Started</h2>
+                    <div class="space-y-5 text-muted leading-relaxed">
+                        <p>
+                            I wrote my first line of code at age 14 — a simple Python script that automated my homework spreadsheets. It was clunky, inefficient, and absolutely magical. That moment sparked a curiosity I've never been able to turn off.
+                        </p>
+                        <p>
+                            When I started university, I quickly realized that textbooks weren't enough. I needed to build real things. So I started side projects — small tools, web apps, CLI utilities — anything that let me apply what I was learning and solve real problems I faced as a student.
+                        </p>
+                        <p>
+                            My entrepreneurial mindset grew naturally from this habit. I started seeing problems everywhere — in student life, in local communities, in everyday workflows — and asking: <span class="text-primary font-semibold italic">"What if I built something to fix this?"</span>
+                        </p>
+                        <p>
+                            Today, I'm in my third year of Computer Science, actively building projects, contributing to open source, and documenting everything on this blog. My goal isn't just to become a great developer — it's to become a developer who creates meaningful impact.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-accentSoft text-accent px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-lightbulb text-xs"></i> Entrepreneurial Mindset
+                        </div>
+                        <div class="flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-seedling text-xs"></i> Continuous Learner
+                        </div>
+                        <div class="flex items-center gap-2 bg-orange-50 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-rocket text-xs"></i> Builder First
+                        </div>
+                    </div>
+                </div>
+                <div id="story-values">
+                    <span class="font-mono text-accent text-sm font-semibold">// core values</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 mb-6">What Drives Me</h2>
+                    <div class="space-y-4">
+                        <div id="value-1" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-hammer text-accent text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Build to Learn</h3>
+                                    <p class="text-muted text-sm leading-relaxed">I believe the fastest path to mastery is building real projects. Theory without practice is just trivia.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-2" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-share-nodes text-green-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Share Everything</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Open source and public learning accelerate everyone. Documenting my journey helps me and others grow faster.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-3" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-users text-orange-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">User-Centered Thinking</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Great software solves real problems for real people. I always start with empathy and end with impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-4" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-chart-line text-purple-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Entrepreneurial Execution</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Ideas are worthless without action. I move fast, iterate often, and ship before I feel ready.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-skills" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// technical expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Skills & Technologies</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">A deep dive into the tools, languages, and frameworks I work with daily.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="skill-category-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-code text-yellow-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">Frontend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">JavaScript / TypeScript</span>
+                                <span class="text-xs text-muted font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-yellow-400 h-2 rounded-full" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">React / Next.js</span>
+                                <span class="text-xs text-muted font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Tailwind CSS / HTML</span>
+                                <span class="text-xs text-muted font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-cyan-400 h-2 rounded-full" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Figma / UI Design</span>
+                                <span class="text-xs text-muted font-semibold">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-pink-400 h-2 rounded-full" style="width:65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skill-category-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-server text-green-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">Backend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Node.js / Express</span>
+                                <span class="text-xs text-muted font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width:75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Python / Flask</span>
+                                <span class="text-xs text-muted font-semibold">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-indigo-400 h-2 rounded-full" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">REST APIs / GraphQL</span>
+                                <span class="text-xs text-muted font-semibold">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width:78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">MongoDB / PostgreSQL</span>
+                                <span class="text-xs text-muted font-semibold">72%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-orange-400 h-2 rounded-full" style="width:72%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skill-category-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-cyan-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-gears text-cyan-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">DevOps & Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Git / GitHub</span>
+                                <span class="text-xs text-muted font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-orange-500 h-2 rounded-full" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Docker</span>
+                                <span class="text-xs text-muted font-semibold">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-cyan-500 h-2 rounded-full" style="width:60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">AWS / Cloud</span>
+                                <span class="text-xs text-muted font-semibold">55%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width:55%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">CI/CD Pipelines</span>
+                                <span class="text-xs text-muted font-semibold">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width:65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="soft-skills" class="mt-10 bg-white rounded-2xl p-8 border border-border">
+                <h3 class="font-bold text-primary text-lg mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-accent"></i> Entrepreneurial & Soft Skills
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <div class="flex flex-col items-center gap-2 p-4 bg-accentSoft rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-lightbulb text-accent text-xl"></i>
+                        <span class="text-xs font-semibold text-accent">Problem Solving</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-green-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-comments text-green-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-green-600">Communication</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-orange-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-people-group text-orange-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-orange-600">Team Leadership</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-purple-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-rotate text-purple-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-purple-600">Agile / Scrum</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-cyan-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-pen-to-square text-cyan-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-cyan-600">Technical Writing</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-pink-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-chart-pie text-pink-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-pink-600">Product Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey-timeline" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// my journey</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Development Timeline</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">Key milestones in my software development and entrepreneurial journey.</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2"></div>
+                <div class="space-y-10">
+
+                    <div id="timeline-1" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">2022</span>
+                                    <span class="text-xs text-muted">Started University</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Enrolled in Computer Science</h3>
+                                <p class="text-muted text-sm">Began my formal CS education with a focus on algorithms, data structures, and software engineering fundamentals.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-accent rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-graduation-cap text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-2" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-code text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-green-400 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">Early 2023</span>
+                                    <span class="text-xs text-muted">First Project</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Built My First Full-Stack App</h3>
+                                <p class="text-muted text-sm">Launched a student study-group finder web app using React and Firebase — 200+ users in the first month.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="timeline-3" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-orange-400 hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">Mid 2023</span>
+                                    <span class="text-xs text-muted">Hackathon</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Won University Hackathon</h3>
+                                <p class="text-muted text-sm">Led a 4-person team to build an AI-powered accessibility tool in 48 hours. First place out of 32 teams.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-trophy text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-4" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-briefcase text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-purple-400 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-2.5 py-1 rounded-full">Late 2023</span>
+                                    <span class="text-xs text-muted">Internship</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Software Engineering Intern</h3>
+                                <p class="text-muted text-sm">Interned at a Series A startup in SF. Built features used by 10k+ users, learned agile workflows in a professional team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="timeline-5" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-cyan-400 hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-cyan-50 text-cyan-600 text-xs font-semibold px-2.5 py-1 rounded-full">2024</span>
+                                    <span class="text-xs text-muted">Entrepreneurship</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Co-Founded First Startup</h3>
+                                <p class="text-muted text-sm">Co-founded TaskFlow with a classmate — a project management tool designed specifically for student teams. Currently in beta.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-rocket text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-6" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-accent rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md ring-4 ring-indigo-100">
+                            <i class="fa-solid fa-star text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-accentSoft rounded-2xl p-5 border border-indigo-200 shadow-sm">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">2025 — Now</span>
+                                    <span class="text-xs text-muted">Present</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Building, Writing & Growing</h3>
+                                <p class="text-muted text-sm">Final year student, shipping new projects, writing on this blog, and actively seeking opportunities to make a real impact in tech.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education-experience" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div id="education">
+                    <span class="font-mono text-accent text-sm font-semibold">// education</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mt-2 mb-8">Academic Background</h2>
+                    <div class="space-y-5">
+                        <div id="edu-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-university text-accent text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">B.Sc. Computer Science</h3>
+                                        <span class="text-xs font-semibold text-accent bg-accentSoft px-2.5 py-1 rounded-full w-fit">2022 – 2026</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">State University of Technology</p>
+                                    <p class="text-muted text-sm leading-relaxed">Specialization in Software Engineering. GPA: 3.9/4.0. Dean's List all semesters.</p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Data Structures</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Algorithms</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Software Design</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Databases</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edu-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-certificate text-orange-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Full-Stack Web Development</h3>
+                                        <span class="text-xs font-semibold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full w-fit">2023</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">freeCodeCamp — Online Certification</p>
+                                    <p class="text-muted text-sm leading-relaxed">Completed 300+ hours covering responsive design, JavaScript algorithms, React, and Node.js backend development.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edu-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-brands fa-aws text-green-600 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">AWS Cloud Practitioner</h3>
+                                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full w-fit">2024</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">Amazon Web Services — Certification</p>
+                                    <p class="text-muted text-sm leading-relaxed">Foundational cloud concepts, AWS core services, security, architecture, pricing, and support.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="experience">
+                    <span class="font-mono text-accent text-sm font-semibold">// experience</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mt-2 mb-8">Work & Projects</h2>
+                    <div class="space-y-5">
+                        <div id="exp-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-laptop-code text-purple-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Software Engineering Intern</h3>
+                                        <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full w-fit">Jun – Dec 2023</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">NovaTech Startup — San Francisco, CA</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Built and shipped 3 major features to 10k+ active users</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Reduced API response time by 40% through query optimization</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Collaborated in daily standups and sprint planning sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="exp-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-rocket text-cyan-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Co-Founder & Lead Dev</h3>
+                                        <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-2.5 py-1 rounded-full w-fit">2024 – Present</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">TaskFlow — Student Project Management Tool</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Architected full-stack app with React, Node.js, and MongoDB</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Grew to 150+ beta users across 3 universities</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Pitched to 2 angel investors; exploring seed funding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="exp-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-brands fa-github text-yellow-600 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Open Source Contributor</h3>
+                                        <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2.5 py-1 rounded-full w-fit">2023 – Present</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">Various Projects on GitHub</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Contributed to 6+ open source projects with merged PRs</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Maintained personal repos with 200+ combined GitHub stars</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Active in developer communities and code reviews</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="career-goals" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// looking ahead</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Career Goals & Vision</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">Where I'm headed and what I'm working towards in the next chapter of my journey.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div id="goal-1" class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-7 border border-indigo-100 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-briefcase text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Short-Term (1–2 Years)</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Land a software engineering role at a company where I can work on meaningful products, grow rapidly, and contribute from day one.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Full-stack or frontend-focused role</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Startup or growth-stage company</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Continue growing TaskFlow</li>
+                    </ul>
+                </div>
+                <div id="goal-2" class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-7 border border-green-100 hover:shadow-lg hover:shadow-green-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-seedling text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Mid-Term (3–5 Years)</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Transition into a senior engineering or technical lead role while continuing to build entrepreneurial projects on the side.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Senior or tech lead position</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Mentor junior developers</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Launch a profitable SaaS product</li>
+                    </ul>
+                </div>
+                <div id="goal-3" class="bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-7 border border-orange-100 hover:shadow-lg hover:shadow-orange-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-star text-orange-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Long-Term Vision</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Found a tech company that addresses a meaningful problem, builds a strong team, and creates lasting impact in people's lives.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Found a venture-backed startup</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Build a team and culture I'm proud of</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Give back through open source</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="interests" class="bg-surface rounded-2xl p-8 border border-border">
+                <h3 class="font-bold text-primary text-lg mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-accent"></i> Beyond the Code
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-book text-blue-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Reading</p>
+                            <p class="text-xs text-muted">Startup books</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-mountain text-orange-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Hiking</p>
+                            <p class="text-xs text-muted">Bay Area trails</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-chess text-purple-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Chess</p>
+                            <p class="text-xs text-muted">1600+ ELO</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-podcast text-green-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Podcasts</p>
+                            <p class="text-xs text-muted">Tech & business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-cta" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-16 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                </div>
+                <div class="relative z-10 text-center max-w-3xl mx-auto">
+                    <span class="font-mono text-indigo-300 text-sm font-semibold">// let's connect</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 mb-5">Want to Work Together?</h2>
+                    <p class="text-indigo-200 text-lg mb-10 leading-relaxed">I'm always open to new opportunities, collaborations, and conversations about tech and entrepreneurship. Let's build something meaningful.</p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="#" class="bg-white text-primary px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm">
+                            <i class="fa-solid fa-file-lines"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-10 pt-8 border-t border-white/10">
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-dev"></i> Dev.to
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                        <span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                        <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a>
+                    </div>
+                </div>
+                <div id="footer-nav">
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="footer-projects">
+                    <h4 class="text-white font-semibold text-sm mb-4">Projects</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-accent text-xs"></i>
+                    <span>for learning</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about-hero" class="pt-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div id="about-hero-content" class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-accentSoft text-accent px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border border-indigo-100">
+                        <i class="fa-solid fa-user text-xs"></i>
+                        About Me
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight mb-5">
+                        I'm <span class="text-accent">Mifzal Fawwaz</span>,<br>
+                        <span class="text-3xl sm:text-4xl lg:text-5xl text-muted font-bold">Software Dev Student</span>
+                    </h1>
+                    <p class="text-muted text-lg leading-relaxed mb-6 max-w-xl">
+                        A driven third-year Computer Science student with a passion for building impactful software, thinking entrepreneurially, and sharing everything I learn along the way.
+                    </p>
+                    <p class="text-muted text-base leading-relaxed mb-8 max-w-xl">
+                        I believe that the best way to learn is by building — real products, real users, real feedback. From hackathons to side projects, I'm always shipping code and documenting the journey.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="bg-accent text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all duration-200 flex items-center gap-2 shadow-lg shadow-indigo-200">
+                            <i class="fa-solid fa-file-lines"></i> Download CV
+                        </a>
+                        <a href="#" class="bg-white text-primary border border-border px-6 py-3 rounded-xl font-semibold text-sm hover:bg-highlight hover:border-indigo-200 transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div id="about-hero-visual" class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100">
+                            <img src="images/fawwaz.jpg" alt="Mifzal Fawwaz" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">Currently</p>
+                                <p class="text-sm font-bold text-primary">CS Year 3</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot text-green-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">Based In</p>
+                                <p class="text-sm font-bold text-primary">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 bg-accent text-white rounded-2xl shadow-lg px-4 py-3 -translate-y-1/2 hidden lg:block">
+                            <p class="text-xs font-medium opacity-80">GPA</p>
+                            <p class="text-sm font-bold">3.9 / 4.0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quick-facts" class="py-10 bg-surface border-y border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <div id="fact-1" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">3+</p>
+                    <p class="text-sm text-muted font-medium">Years Coding</p>
+                </div>
+                <div id="fact-2" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">12+</p>
+                    <p class="text-sm text-muted font-medium">Projects Built</p>
+                </div>
+                <div id="fact-3" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">5</p>
+                    <p class="text-sm text-muted font-medium">Hackathons Won</p>
+                </div>
+                <div id="fact-4" class="text-center">
+                    <p class="text-3xl font-extrabold text-accent mb-1">2</p>
+                    <p class="text-sm text-muted font-medium">Startups Founded</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="my-story" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div id="story-content">
+                    <span class="font-mono text-accent text-sm font-semibold">// my story</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 mb-6">How It All Started</h2>
+                    <div class="space-y-5 text-muted leading-relaxed">
+                        <p>
+                            I wrote my first line of code at age 14 — a simple Python script that automated my homework spreadsheets. It was clunky, inefficient, and absolutely magical. That moment sparked a curiosity I've never been able to turn off.
+                        </p>
+                        <p>
+                            When I started university, I quickly realized that textbooks weren't enough. I needed to build real things. So I started side projects — small tools, web apps, CLI utilities — anything that let me apply what I was learning and solve real problems I faced as a student.
+                        </p>
+                        <p>
+                            My entrepreneurial mindset grew naturally from this habit. I started seeing problems everywhere — in student life, in local communities, in everyday workflows — and asking: <span class="text-primary font-semibold italic">"What if I built something to fix this?"</span>
+                        </p>
+                        <p>
+                            Today, I'm in my third year of Computer Science, actively building projects, contributing to open source, and documenting everything on this blog. My goal isn't just to become a great developer — it's to become a developer who creates meaningful impact.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-accentSoft text-accent px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-lightbulb text-xs"></i> Entrepreneurial Mindset
+                        </div>
+                        <div class="flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-seedling text-xs"></i> Continuous Learner
+                        </div>
+                        <div class="flex items-center gap-2 bg-orange-50 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fa-solid fa-rocket text-xs"></i> Builder First
+                        </div>
+                    </div>
+                </div>
+                <div id="story-values">
+                    <span class="font-mono text-accent text-sm font-semibold">// core values</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 mb-6">What Drives Me</h2>
+                    <div class="space-y-4">
+                        <div id="value-1" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-hammer text-accent text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Build to Learn</h3>
+                                    <p class="text-muted text-sm leading-relaxed">I believe the fastest path to mastery is building real projects. Theory without practice is just trivia.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-2" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-share-nodes text-green-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Share Everything</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Open source and public learning accelerate everyone. Documenting my journey helps me and others grow faster.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-3" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-users text-orange-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">User-Centered Thinking</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Great software solves real problems for real people. I always start with empathy and end with impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="value-4" class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                    <i class="fa-solid fa-chart-line text-purple-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary mb-1">Entrepreneurial Execution</h3>
+                                    <p class="text-muted text-sm leading-relaxed">Ideas are worthless without action. I move fast, iterate often, and ship before I feel ready.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-skills" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// technical expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Skills & Technologies</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">A deep dive into the tools, languages, and frameworks I work with daily.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="skill-category-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-code text-yellow-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">Frontend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">JavaScript / TypeScript</span>
+                                <span class="text-xs text-muted font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-yellow-400 h-2 rounded-full" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">React / Next.js</span>
+                                <span class="text-xs text-muted font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Tailwind CSS / HTML</span>
+                                <span class="text-xs text-muted font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-cyan-400 h-2 rounded-full" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Figma / UI Design</span>
+                                <span class="text-xs text-muted font-semibold">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-pink-400 h-2 rounded-full" style="width:65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skill-category-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-server text-green-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">Backend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Node.js / Express</span>
+                                <span class="text-xs text-muted font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width:75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Python / Flask</span>
+                                <span class="text-xs text-muted font-semibold">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-indigo-400 h-2 rounded-full" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">REST APIs / GraphQL</span>
+                                <span class="text-xs text-muted font-semibold">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width:78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">MongoDB / PostgreSQL</span>
+                                <span class="text-xs text-muted font-semibold">72%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-orange-400 h-2 rounded-full" style="width:72%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skill-category-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-cyan-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-gears text-cyan-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-primary">DevOps & Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Git / GitHub</span>
+                                <span class="text-xs text-muted font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-orange-500 h-2 rounded-full" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">Docker</span>
+                                <span class="text-xs text-muted font-semibold">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-cyan-500 h-2 rounded-full" style="width:60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">AWS / Cloud</span>
+                                <span class="text-xs text-muted font-semibold">55%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width:55%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-medium text-primary">CI/CD Pipelines</span>
+                                <span class="text-xs text-muted font-semibold">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width:65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="soft-skills" class="mt-10 bg-white rounded-2xl p-8 border border-border">
+                <h3 class="font-bold text-primary text-lg mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-accent"></i> Entrepreneurial & Soft Skills
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <div class="flex flex-col items-center gap-2 p-4 bg-accentSoft rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-lightbulb text-accent text-xl"></i>
+                        <span class="text-xs font-semibold text-accent">Problem Solving</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-green-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-comments text-green-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-green-600">Communication</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-orange-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-people-group text-orange-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-orange-600">Team Leadership</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-purple-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-rotate text-purple-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-purple-600">Agile / Scrum</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-cyan-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-pen-to-square text-cyan-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-cyan-600">Technical Writing</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 p-4 bg-pink-50 rounded-xl text-center hover:scale-105 transition-transform duration-200 cursor-default">
+                        <i class="fa-solid fa-chart-pie text-pink-500 text-xl"></i>
+                        <span class="text-xs font-semibold text-pink-600">Product Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey-timeline" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// my journey</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Development Timeline</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">Key milestones in my software development and entrepreneurial journey.</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2"></div>
+                <div class="space-y-10">
+
+                    <div id="timeline-1" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-accent hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">2022</span>
+                                    <span class="text-xs text-muted">Started University</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Enrolled in Computer Science</h3>
+                                <p class="text-muted text-sm">Began my formal CS education with a focus on algorithms, data structures, and software engineering fundamentals.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-accent rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-graduation-cap text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-2" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-code text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-green-400 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">Early 2023</span>
+                                    <span class="text-xs text-muted">First Project</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Built My First Full-Stack App</h3>
+                                <p class="text-muted text-sm">Launched a student study-group finder web app using React and Firebase — 200+ users in the first month.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="timeline-3" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-orange-400 hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">Mid 2023</span>
+                                    <span class="text-xs text-muted">Hackathon</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Won University Hackathon</h3>
+                                <p class="text-muted text-sm">Led a 4-person team to build an AI-powered accessibility tool in 48 hours. First place out of 32 teams.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-trophy text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-4" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-briefcase text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-purple-400 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-2.5 py-1 rounded-full">Late 2023</span>
+                                    <span class="text-xs text-muted">Internship</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Software Engineering Intern</h3>
+                                <p class="text-muted text-sm">Interned at a Series A startup in SF. Built features used by 10k+ users, learned agile workflows in a professional team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="timeline-5" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                            <div class="bg-surface rounded-2xl p-5 border border-border hover:border-cyan-400 hover:shadow-md transition-all duration-300 inline-block w-full md:w-auto">
+                                <div class="flex items-center gap-2 mb-2 md:justify-end">
+                                    <span class="bg-cyan-50 text-cyan-600 text-xs font-semibold px-2.5 py-1 rounded-full">2024</span>
+                                    <span class="text-xs text-muted">Entrepreneurship</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Co-Founded First Startup</h3>
+                                <p class="text-muted text-sm">Co-founded TaskFlow with a classmate — a project management tool designed specifically for student teams. Currently in beta.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md">
+                            <i class="fa-solid fa-rocket text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <div id="timeline-6" class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-accent rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-md ring-4 ring-indigo-100">
+                            <i class="fa-solid fa-star text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 pl-12">
+                            <div class="bg-accentSoft rounded-2xl p-5 border border-indigo-200 shadow-sm">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">2025 — Now</span>
+                                    <span class="text-xs text-muted">Present</span>
+                                </div>
+                                <h3 class="font-bold text-primary mb-1">Building, Writing & Growing</h3>
+                                <p class="text-muted text-sm">Final year student, shipping new projects, writing on this blog, and actively seeking opportunities to make a real impact in tech.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education-experience" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div id="education">
+                    <span class="font-mono text-accent text-sm font-semibold">// education</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mt-2 mb-8">Academic Background</h2>
+                    <div class="space-y-5">
+                        <div id="edu-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-university text-accent text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">B.Sc. Computer Science</h3>
+                                        <span class="text-xs font-semibold text-accent bg-accentSoft px-2.5 py-1 rounded-full w-fit">2022 – 2026</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">State University of Technology</p>
+                                    <p class="text-muted text-sm leading-relaxed">Specialization in Software Engineering. GPA: 3.9/4.0. Dean's List all semesters.</p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Data Structures</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Algorithms</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Software Design</span>
+                                        <span class="bg-surface text-muted text-xs px-2 py-0.5 rounded-md border border-border">Databases</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edu-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-certificate text-orange-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Full-Stack Web Development</h3>
+                                        <span class="text-xs font-semibold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full w-fit">2023</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">freeCodeCamp — Online Certification</p>
+                                    <p class="text-muted text-sm leading-relaxed">Completed 300+ hours covering responsive design, JavaScript algorithms, React, and Node.js backend development.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edu-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-brands fa-aws text-green-600 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">AWS Cloud Practitioner</h3>
+                                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full w-fit">2024</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">Amazon Web Services — Certification</p>
+                                    <p class="text-muted text-sm leading-relaxed">Foundational cloud concepts, AWS core services, security, architecture, pricing, and support.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="experience">
+                    <span class="font-mono text-accent text-sm font-semibold">// experience</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mt-2 mb-8">Work & Projects</h2>
+                    <div class="space-y-5">
+                        <div id="exp-1" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-laptop-code text-purple-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Software Engineering Intern</h3>
+                                        <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full w-fit">Jun – Dec 2023</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">NovaTech Startup — San Francisco, CA</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Built and shipped 3 major features to 10k+ active users</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Reduced API response time by 40% through query optimization</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Collaborated in daily standups and sprint planning sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="exp-2" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-rocket text-cyan-500 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Co-Founder & Lead Dev</h3>
+                                        <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-2.5 py-1 rounded-full w-fit">2024 – Present</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">TaskFlow — Student Project Management Tool</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Architected full-stack app with React, Node.js, and MongoDB</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Grew to 150+ beta users across 3 universities</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Pitched to 2 angel investors; exploring seed funding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="exp-3" class="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-brands fa-github text-yellow-600 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                        <h3 class="font-bold text-primary">Open Source Contributor</h3>
+                                        <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2.5 py-1 rounded-full w-fit">2023 – Present</span>
+                                    </div>
+                                    <p class="text-muted text-sm font-medium mb-2">Various Projects on GitHub</p>
+                                    <ul class="text-muted text-sm space-y-1.5 leading-relaxed">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Contributed to 6+ open source projects with merged PRs</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Maintained personal repos with 200+ combined GitHub stars</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1 flex-shrink-0"></i>Active in developer communities and code reviews</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="career-goals" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// looking ahead</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Career Goals & Vision</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">Where I'm headed and what I'm working towards in the next chapter of my journey.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div id="goal-1" class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-7 border border-indigo-100 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-briefcase text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Short-Term (1–2 Years)</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Land a software engineering role at a company where I can work on meaningful products, grow rapidly, and contribute from day one.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Full-stack or frontend-focused role</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Startup or growth-stage company</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-accent text-xs"></i>Continue growing TaskFlow</li>
+                    </ul>
+                </div>
+                <div id="goal-2" class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-7 border border-green-100 hover:shadow-lg hover:shadow-green-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-seedling text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Mid-Term (3–5 Years)</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Transition into a senior engineering or technical lead role while continuing to build entrepreneurial projects on the side.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Senior or tech lead position</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Mentor junior developers</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-green-500 text-xs"></i>Launch a profitable SaaS product</li>
+                    </ul>
+                </div>
+                <div id="goal-3" class="bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-7 border border-orange-100 hover:shadow-lg hover:shadow-orange-50 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-star text-orange-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-primary text-lg mb-3">Long-Term Vision</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-4">Found a tech company that addresses a meaningful problem, builds a strong team, and creates lasting impact in people's lives.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Found a venture-backed startup</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Build a team and culture I'm proud of</li>
+                        <li class="flex items-center gap-2 text-sm text-muted"><i class="fa-solid fa-arrow-right text-orange-500 text-xs"></i>Give back through open source</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="interests" class="bg-surface rounded-2xl p-8 border border-border">
+                <h3 class="font-bold text-primary text-lg mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-accent"></i> Beyond the Code
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-book text-blue-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Reading</p>
+                            <p class="text-xs text-muted">Startup books</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-mountain text-orange-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Hiking</p>
+                            <p class="text-xs text-muted">Bay Area trails</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-chess text-purple-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Chess</p>
+                            <p class="text-xs text-muted">1600+ ELO</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-border hover:border-accent transition-all duration-200">
+                        <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-podcast text-green-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Podcasts</p>
+                            <p class="text-xs text-muted">Tech & business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-cta" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-16 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                </div>
+                <div class="relative z-10 text-center max-w-3xl mx-auto">
+                    <span class="font-mono text-indigo-300 text-sm font-semibold">// let's connect</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 mb-5">Want to Work Together?</h2>
+                    <p class="text-indigo-200 text-lg mb-10 leading-relaxed">I'm always open to new opportunities, collaborations, and conversations about tech and entrepreneurship. Let's build something meaningful.</p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="#" class="bg-white text-primary px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm">
+                            <i class="fa-solid fa-file-lines"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-10 pt-8 border-t border-white/10">
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-dev"></i> Dev.to
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                        <span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                        <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a>
+                    </div>
+                </div>
+                <div id="footer-nav">
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="footer-projects">
+                    <h4 class="text-white font-semibold text-sm mb-4">Projects</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-accent text-xs"></i>
+                    <span>for learning</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

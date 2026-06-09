@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="post-hero" class="pt-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 relative z-10">
+            <div id="breadcrumb" class="flex items-center gap-2 text-xs text-muted mb-6">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Home</a>
+                <i class="fa-solid fa-chevron-right text-xs text-border"></i>
+                <a href="blog.html" class="hover:text-accent transition-colors duration-200">Blog</a>
+                <i class="fa-solid fa-chevron-right text-xs text-border"></i>
+                <span class="text-primary font-medium truncate max-w-xs">Building TaskFlow: From Idea to 150+ Beta Users</span>
+            </div>
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap items-center gap-2 mb-5">
+                    <span class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-star text-xs"></i> Featured
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-accentSoft text-accent text-xs font-semibold px-3 py-1 rounded-full border border-indigo-100">
+                        <i class="fa-solid fa-file-code text-xs"></i> Project Docs
+                    </span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary leading-tight mb-5">
+                    Building TaskFlow: From Idea to<br class="hidden sm:block">
+                    <span class="text-accent">150+ Beta Users in 3 Months</span>
+                </h1>
+                <p class="text-muted text-lg leading-relaxed mb-6 max-w-2xl">
+                    A deep dive into how I co-founded a student project management tool — the technical decisions, the mistakes, the pivots, and what we learned about building for a niche audience.
+                </p>
+                <div class="flex flex-wrap items-center gap-5 mb-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-10 h-10 rounded-full object-cover border-2 border-border" />
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Mifzal Fawwaz</p>
+                            <p class="text-xs text-muted">CS Student & Founder</p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-px bg-border hidden sm:block"></div>
+                    <div class="flex flex-wrap items-center gap-4 text-xs text-muted">
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-accent"></i> May 28, 2025</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-accent"></i> 8 min read</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye text-accent"></i> 3,241 views</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-heart text-accent"></i> 148 likes</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#React</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#Node.js</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MongoDB</span>
+                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Startup</span>
+                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#ProductDev</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="post-cover" class="bg-white pb-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl">
+                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/aee8567266-6902889a0312207fb72e.png" alt="developer coding workspace with multiple monitors, dark theme, code editor, modern tech setup, professional photography style, indigo purple accent lighting" />
+            </div>
+        </div>
+    </section>
+
+    <section id="post-body" class="py-12 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-10">
+
+                <div id="post-content-column" class="flex-1 min-w-0">
+
+                    <div id="reading-progress-bar" class="fixed top-16 left-0 right-0 z-40 h-0.5 bg-border">
+                        <div id="progress-fill" class="h-full bg-accent transition-all duration-100" style="width: 0%"></div>
+                    </div>
+
+                    <div id="share-floating" class="hidden xl:flex flex-col items-center gap-3 fixed left-6 top-1/2 -translate-y-1/2 z-30">
+                        <span class="text-xs text-muted font-semibold writing-mode-vertical rotate-180" style="writing-mode: vertical-rl;">Share</span>
+                        <div class="w-px h-8 bg-border"></div>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-blue-600 hover:border-blue-200 transition-all duration-200">
+                            <i class="fa-brands fa-twitter text-sm"></i>
+                        </button>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-blue-700 hover:border-blue-200 transition-all duration-200">
+                            <i class="fa-brands fa-linkedin text-sm"></i>
+                        </button>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-gray-900 hover:border-gray-300 transition-all duration-200">
+                            <i class="fa-brands fa-github text-sm"></i>
+                        </button>
+                        <button id="copy-link-btn" class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all duration-200">
+                            <i class="fa-solid fa-link text-sm"></i>
+                        </button>
+                    </div>
+
+                    <article id="article-content" class="bg-white rounded-3xl border border-border p-8 lg:p-12 mb-8">
+                        <div id="article-intro" class="mb-10">
+                            <div class="bg-accentSoft border border-indigo-100 rounded-2xl p-6 mb-8">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-circle-info text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-primary mb-1">TL;DR</p>
+                                        <p class="text-sm text-muted leading-relaxed">We built TaskFlow — a project management tool for students — in 3 months, reached 150+ beta users, and learned invaluable lessons about product-market fit, full-stack architecture, and entrepreneurship. This post covers everything.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-base text-muted leading-relaxed mb-5">
+                                It started with a frustration. My team and I were constantly switching between Notion, WhatsApp, and a shared Google Doc to manage our university group projects. We were CS students — surely we could build something better. So we did.
+                            </p>
+                            <p class="text-base text-muted leading-relaxed">
+                                TaskFlow began as a weekend hack. Three months later, it had 150+ active beta users, a waitlist, and had been featured in our university's tech newsletter. Here's the full, unfiltered story of how we built it.
+                            </p>
+                        </div>
+
+                        <div id="article-section-1" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">01</span>
+                                The Problem We Were Solving
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-4">We surveyed 40 students across 6 departments and found a consistent pattern: group project management was painful. The core issues were:</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">Fragmented communication across too many platforms</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">No deadline visibility for all team members simultaneously</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">Existing tools like Jira and Asana were too complex for academic contexts</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">No integration with university submission portals or calendars</span></li>
+                            </ul>
+                            <p class="text-base text-muted leading-relaxed">The insight was clear: students needed a lightweight, opinionated tool built specifically for academic project workflows — not a watered-down enterprise solution.</p>
+                        </div>
+
+                        <div id="article-section-2" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">02</span>
+                                Technical Architecture
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">We chose a MERN stack (MongoDB, Express, React, Node.js) for the core application. Here's how our architecture looked after the first major iteration:</p>
+                            <div id="architecture-diagram" class="bg-primary rounded-2xl p-6 mb-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-react text-cyan-400 text-lg"></i><span class="text-white text-sm font-bold">Frontend</span></div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>React 18 + Vite</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Tailwind CSS</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>React Query</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Socket.io Client</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-node-js text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Backend</span></div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Node.js + Express</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>REST API</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Socket.io Server</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>JWT Auth</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-database text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Data & Infra</span></div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MongoDB Atlas</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Redis Cache</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Vercel + Railway</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Cloudinary</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-base text-muted leading-relaxed mb-6">One of our biggest technical decisions was implementing real-time collaboration via WebSockets. Here's the core socket setup we used for task updates:</p>
+                            <div id="code-snippet-1" class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">socket.js</span></div>
+                                    <button class="text-xs text-indigo-300 hover:text-white font-mono flex items-center gap-1.5 transition-colors duration-200"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-indigo-300">// Real-time task update handler</span>
+<span class="text-purple-300">io</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'connection'</span><span class="text-white">, (</span><span class="text-orange-300">socket</span><span class="text-white">) =&gt; {</span>
+
+  <span class="text-indigo-300">// Join a project room</span>
+  <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'join-project'</span><span class="text-white">, (</span><span class="text-orange-300">projectId</span><span class="text-white">) =&gt; {</span>
+    <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">join</span><span class="text-white">(</span><span class="text-orange-300">projectId</span><span class="text-white">);</span>
+    <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">emit</span><span class="text-white">(</span><span class="text-green-300">'joined'</span><span class="text-white">, { </span><span class="text-orange-300">projectId</span><span class="text-white"> });</span>
+  <span class="text-white">});</span>
+
+  <span class="text-indigo-300">// Broadcast task updates to all team members</span>
+  <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'task-update'</span><span class="text-white">, async (</span><span class="text-orange-300">data</span><span class="text-white">) =&gt; {</span>
+    <span class="text-purple-300">const</span> <span class="text-white">updated = await </span><span class="text-purple-300">Task</span><span class="text-white">.</span><span class="text-yellow-300">findByIdAndUpdate</span><span class="text-white">(</span>
+      <span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">taskId</span><span class="text-white">,</span>
+      <span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">updates</span><span class="text-white">,</span>
+      <span class="text-white">{ </span><span class="text-orange-300">new</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> }</span>
+    <span class="text-white">);</span>
+    <span class="text-purple-300">io</span><span class="text-white">.</span><span class="text-yellow-300">to</span><span class="text-white">(</span><span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">projectId</span><span class="text-white">).</span><span class="text-yellow-300">emit</span><span class="text-white">(</span><span class="text-green-300">'task-updated'</span><span class="text-white">, updated);</span>
+  <span class="text-white">});</span>
+
+<span class="text-white">});</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-section-3" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">03</span>
+                                The Pivot That Changed Everything
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-5">At week 6, we had 20 users and almost zero engagement. Our original vision was a full-featured project management suite. We were wrong about what students actually needed.</p>
+                            <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i></div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-orange-800 mb-1">Key Insight</p>
+                                        <p class="text-sm text-orange-700 leading-relaxed">Students didn't want a project management tool. They wanted a <strong>deadline accountability system</strong> with built-in team notifications. We stripped 60% of the features and rebuilt around this core insight.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-base text-muted leading-relaxed mb-5">After the pivot, we launched a stripped-down v2 in 2 weeks. The results were immediate: daily active users went from 4 to 47 within the first week of the new release.</p>
+                            <div class="h-64 overflow-hidden rounded-2xl border border-border">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/811ebfee0f-d83c35cccbb83ebb8bc3.png" alt="product analytics dashboard showing growth curve, user metrics, startup growth chart, clean modern data visualization, indigo blue colors" />
+                            </div>
+                        </div>
+
+                        <div id="article-section-4" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">04</span>
+                                Growth: 0 to 150+ Users
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">We didn't run ads. Our entire growth was word-of-mouth, campus ambassador outreach, and one well-timed Reddit post. Here's a breakdown of our acquisition channels:</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-accentSoft rounded-2xl p-5 text-center border border-indigo-100"><div class="text-3xl font-extrabold text-accent mb-1">63%</div><div class="text-xs text-muted font-medium">Word of Mouth</div></div>
+                                <div class="bg-green-50 rounded-2xl p-5 text-center border border-green-100"><div class="text-3xl font-extrabold text-green-600 mb-1">24%</div><div class="text-xs text-muted font-medium">Campus Outreach</div></div>
+                                <div class="bg-orange-50 rounded-2xl p-5 text-center border border-orange-100"><div class="text-3xl font-extrabold text-orange-600 mb-1">13%</div><div class="text-xs text-muted font-medium">Reddit / Social</div></div>
+                            </div>
+                            <p class="text-base text-muted leading-relaxed">The Reddit post on r/cscareerquestions titled "I built a project management tool for CS students — here's what I learned" got 847 upvotes and drove 60 sign-ups in 48 hours. Authentic storytelling beats any ad spend.</p>
+                        </div>
+
+                        <div id="article-section-5" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">05</span>
+                                Key Lessons & Takeaways
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-users text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Talk to your users before writing a single line of code</h4><p class="text-sm text-muted leading-relaxed">We wasted 3 weeks building features nobody asked for. User interviews are the most valuable engineering time you'll spend.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-scissors text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Simplicity is a feature, not a limitation</h4><p class="text-sm text-muted leading-relaxed">Stripping 60% of our features doubled our engagement. Constraint breeds clarity.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-rocket text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Ship early, iterate fast</h4><p class="text-sm text-muted leading-relaxed">Our v1 was embarrassingly rough. But the feedback we got in week 1 was worth more than any amount of pre-launch polish.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-pen-nib text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Document everything publicly</h4><p class="text-sm text-muted leading-relaxed">Writing this blog post drove more sign-ups than any feature we shipped. Building in public is a growth strategy.</p></div></div>
+                            </div>
+                        </div>
+
+                        <div id="article-code-2" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">06</span>
+                                The Task Schema That Evolved
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">Our MongoDB task schema went through 4 iterations. Here's the final version that supported all our core features:</p>
+                            <div id="code-snippet-2" class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">Task.model.js</span></div>
+                                    <button class="text-xs text-indigo-300 hover:text-white font-mono flex items-center gap-1.5 transition-colors duration-200"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-purple-300">const</span> <span class="text-white">taskSchema = </span><span class="text-purple-300">new</span> <span class="text-yellow-300">Schema</span><span class="text-white">({</span>
+  <span class="text-orange-300">title</span><span class="text-white">:    { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">required</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> },</span>
+  <span class="text-orange-300">status</span><span class="text-white">:   { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">enum</span><span class="text-white">: [</span><span class="text-green-300">'todo'</span><span class="text-white">, </span><span class="text-green-300">'in-progress'</span><span class="text-white">, </span><span class="text-green-300">'done'</span><span class="text-white">] },</span>
+  <span class="text-orange-300">assignee</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">ObjectId</span><span class="text-white">, </span><span class="text-orange-300">ref</span><span class="text-white">: </span><span class="text-green-300">'User'</span><span class="text-white"> },</span>
+  <span class="text-orange-300">deadline</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">Date</span><span class="text-white">, </span><span class="text-orange-300">required</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> },</span>
+  <span class="text-orange-300">project</span><span class="text-white">:  { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">ObjectId</span><span class="text-white">, </span><span class="text-orange-300">ref</span><span class="text-white">: </span><span class="text-green-300">'Project'</span><span class="text-white"> },</span>
+  <span class="text-orange-300">tags</span><span class="text-white">:     [</span><span class="text-purple-300">String</span><span class="text-white">],</span>
+  <span class="text-orange-300">priority</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">enum</span><span class="text-white">: [</span><span class="text-green-300">'low'</span><span class="text-white">, </span><span class="text-green-300">'medium'</span><span class="text-white">, </span><span class="text-green-300">'high'</span><span class="text-white">] },</span>
+<span class="text-white">}, { </span><span class="text-orange-300">timestamps</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> });</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-conclusion" class="mb-8">
+                            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-2xl p-8 text-center relative overflow-hidden">
+                                <div class="absolute inset-0 pointer-events-none"><div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div></div>
+                                <div class="relative z-10">
+                                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-flag-checkered text-white text-lg"></i></div>
+                                    <h3 class="text-xl font-extrabold text-white mb-3">What's Next for TaskFlow?</h3>
+                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">We're working on a calendar integration, a mobile app, and exploring a freemium model. If you're a student and want early access, drop your email below.</p>
+                                    <div class="flex gap-2 max-w-sm mx-auto">
+                                        <input type="email" placeholder="your@email.com" class="flex-1 px-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-sm placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-white/30" />
+                                        <button class="bg-accent text-white px-4 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-500 transition-all duration-200 whitespace-nowrap">Join Beta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-tags" class="pt-6 border-t border-border">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-xs font-semibold text-muted mr-1">Tags:</span>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#React</a>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#Node.js</a>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#MongoDB</a>
+                                <a href="#" class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-200">#Startup</a>
+                                <a href="#" class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-green-500 hover:text-white transition-all duration-200">#ProductDev</a>
+                                <a href="#" class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-200">#MERN</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div id="share-section" class="bg-white rounded-2xl border border-border p-6 mb-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-primary text-sm mb-1">Found this helpful? Share it!</h3>
+                                <p class="text-xs text-muted">Help other students discover this post</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 text-xs font-semibold hover:bg-blue-500 hover:text-white transition-all duration-200"><i class="fa-brands fa-twitter"></i> Twitter</button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-700 border border-blue-100 text-xs font-semibold hover:bg-blue-700 hover:text-white transition-all duration-200"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 text-gray-700 border border-gray-200 text-xs font-semibold hover:bg-gray-700 hover:text-white transition-all duration-200"><i class="fa-brands fa-reddit"></i> Reddit</button>
+                                <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-accentSoft text-accent border border-indigo-100 text-xs font-semibold hover:bg-accent hover:text-white transition-all duration-200"><i class="fa-solid fa-link"></i> Copy Link</button>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-5 border-t border-border flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <button id="like-btn" class="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-muted text-sm font-semibold hover:border-red-200 hover:text-red-500 hover:bg-red-50 transition-all duration-200"><i class="fa-regular fa-heart"></i> <span id="like-count">148</span> Likes</button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-muted text-sm font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200"><i class="fa-regular fa-bookmark"></i> Save</button>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-xs text-muted"><i class="fa-regular fa-eye"></i><span>3,241 views</span></div>
+                        </div>
+                    </div>
+
+                    <div id="author-card" class="bg-white rounded-2xl border border-border p-6 mb-8">
+                        <div class="flex flex-col sm:flex-row items-start gap-5">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-20 h-20 rounded-2xl object-cover border-2 border-border flex-shrink-0" />
+                            <div class="flex-1 min-w-0">
+                                <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+                                    <div>
+                                        <h3 class="font-extrabold text-primary text-lg">Mifzal Fawwaz</h3>
+                                        <p class="text-xs text-muted">CS Student · Co-founder of TaskFlow · Blogger</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-github text-lg"></i></a>
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-twitter text-lg"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-4">I'm a final-year CS student building entrepreneurial software projects and writing about the journey. I believe in learning by building and sharing everything along the way.</p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-indigo-700 transition-all duration-200">Follow</a>
+                                    <a href="#" class="border border-border text-primary px-4 py-2 rounded-lg text-xs font-bold hover:border-accent hover:text-accent transition-all duration-200">View All Posts</a>
+                                    <span class="text-xs text-muted flex items-center gap-1.5 ml-auto"><i class="fa-solid fa-pen-nib text-accent"></i> 12 articles published</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="post-navigation" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <a href="#" class="bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all duration-300 group flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 group-hover:bg-accentSoft transition-colors duration-200"><i class="fa-solid fa-arrow-left text-muted group-hover:text-accent text-xs transition-colors duration-200"></i></div>
+                            <div class="min-w-0"><p class="text-xs text-muted mb-1">Previous Post</p><h4 class="text-sm font-bold text-primary group-hover:text-accent transition-colors duration-200 leading-snug line-clamp-2">5 Entrepreneurial Skills Every CS Student Should Develop</h4></div>
+                        </a>
+                        <a href="#" class="bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all duration-300 group flex items-start gap-3 sm:flex-row-reverse sm:text-right">
+                            <div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 group-hover:bg-accentSoft transition-colors duration-200"><i class="fa-solid fa-arrow-right text-muted group-hover:text-accent text-xs transition-colors duration-200"></i></div>
+                            <div class="min-w-0"><p class="text-xs text-muted mb-1">Next Post</p><h4 class="text-sm font-bold text-primary group-hover:text-accent transition-colors duration-200 leading-snug line-clamp-2">Responsive Design Mastery: Building Layouts That Work Everywhere</h4></div>
+                        </a>
+                    </div>
+
+                    <div id="comments-section" class="bg-white rounded-2xl border border-border p-6 lg:p-8 mb-8">
+                        <h3 class="font-extrabold text-primary text-xl mb-6 flex items-center gap-3"><i class="fa-regular fa-comments text-accent"></i> Comments <span class="text-base font-semibold text-muted">(14)</span></h3>
+                        <div id="comment-form" class="mb-8">
+                            <div class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="You" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <textarea placeholder="Share your thoughts or ask a question..." class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 resize-none h-24"></textarea>
+                                    <div class="flex items-center justify-between mt-2"><span class="text-xs text-muted">Be respectful and constructive</span><button class="bg-accent text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-indigo-700 transition-all duration-200 flex items-center gap-2"><i class="fa-solid fa-paper-plane"></i> Post Comment</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="comments-list" class="space-y-6">
+                            <div id="comment-1" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Marcus" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2"><div class="flex items-center gap-2"><span class="text-sm font-bold text-primary">Marcus K.</span><span class="text-xs text-muted">· 2 days ago</span></div><button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1"><i class="fa-regular fa-thumbs-up"></i> 12</button></div>
+                                        <p class="text-sm text-muted leading-relaxed">This is exactly what I needed to read. I've been overthinking my side project and this post reminded me to just ship and iterate. The pivot story is gold — stripping features to focus on core value is something I always forget to do.</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2"><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button></div>
+                                    <div class="mt-4 ml-6 space-y-4">
+                                        <div class="flex items-start gap-3">
+                                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Alex" class="w-8 h-8 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                            <div class="flex-1">
+                                                <div class="bg-accentSoft rounded-2xl p-4 border border-indigo-100">
+                                                    <div class="flex items-center gap-2 mb-2"><span class="text-sm font-bold text-accent">Mifzal Fawwaz</span><span class="text-xs bg-accent text-white px-1.5 py-0.5 rounded-full font-semibold">Author</span><span class="text-xs text-muted">· 1 day ago</span></div>
+                                                    <p class="text-sm text-muted leading-relaxed">Thanks Marcus! The pivot was honestly painful at the time — we had to delete months of work. But it was the best decision we made. Good luck with your side project!</p>
+                                                </div>
+                                                <div class="flex items-center gap-3 mt-2 ml-2"><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="comment-2" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Priya" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2"><div class="flex items-center gap-2"><span class="text-sm font-bold text-primary">Priya S.</span><span class="text-xs text-muted">· 3 days ago</span></div><button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1"><i class="fa-regular fa-thumbs-up"></i> 8</button></div>
+                                        <p class="text-sm text-muted leading-relaxed">The real-time WebSocket implementation is really clean! Quick question — did you run into any issues with scaling the Socket.io connections when you started getting more concurrent users? Would love to know how you handled that.</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2"><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button></div>
+                                </div>
+                            </div>
+                            <div id="comment-3" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="James" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2"><div class="flex items-center gap-2"><span class="text-sm font-bold text-primary">James T.</span><span class="text-xs text-muted">· 4 days ago</span></div><button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1"><i class="fa-regular fa-thumbs-up"></i> 5</button></div>
+                                        <p class="text-sm text-muted leading-relaxed">Incredible documentation. The Reddit growth strategy is something I'll definitely try for my next project. Also, that architecture diagram is super helpful — would you consider open-sourcing the project?</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2"><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button><button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button></div>
+                                </div>
+                            </div>
+                            <button class="w-full py-3 rounded-xl border border-border text-sm text-muted font-semibold hover:border-accent hover:text-accent transition-all duration-200 flex items-center justify-center gap-2"><i class="fa-solid fa-chevron-down text-xs"></i> Load 11 more comments</button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside id="post-sidebar" class="w-full lg:w-80 flex-shrink-0 space-y-6">
+                    <div id="sidebar-toc" class="bg-white rounded-2xl border border-border p-6 sticky top-20">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-accent"></i> Table of Contents</h3>
+                        <nav class="space-y-1">
+                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> The Problem We Were Solving</a>
+                            <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">02</span> Technical Architecture</a>
+                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> The Pivot That Changed Everything</a>
+                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Growth: 0 to 150+ Users</a>
+                            <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">05</span> Key Lessons & Takeaways</a>
+                            <a href="#article-code-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">06</span> The Task Schema</a>
+                        </nav>
+                        <div class="mt-5 pt-4 border-t border-border">
+                            <div class="flex items-center justify-between text-xs text-muted mb-2"><span>Reading progress</span><span id="progress-pct">0%</span></div>
+                            <div class="w-full h-1.5 bg-border rounded-full overflow-hidden"><div id="sidebar-progress" class="h-full bg-accent rounded-full transition-all duration-200" style="width: 0%"></div></div>
+                        </div>
+                    </div>
+                    <div id="sidebar-about" class="bg-white rounded-2xl border border-border p-6">
+                        <div class="flex items-center gap-4 mb-4"><img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-14 h-14 rounded-2xl object-cover border-2 border-border" /><div><h3 class="font-bold text-primary">Mifzal Fawwaz</h3><p class="text-xs text-muted">CS Student · Builder · Writer</p></div></div>
+                        <p class="text-muted text-sm leading-relaxed mb-4">Writing about software development, entrepreneurship, and everything I build and learn as a CS student.</p>
+                        <div class="flex gap-2"><a href="#" class="flex-1 text-center bg-accent text-white text-xs font-semibold py-2 rounded-lg hover:bg-indigo-700 transition-all duration-200">Follow</a><a href="#" class="flex-1 text-center border border-border text-primary text-xs font-semibold py-2 rounded-lg hover:border-accent hover:text-accent transition-all duration-200">About Me</a></div>
+                    </div>
+                    <div id="sidebar-tags" class="bg-white rounded-2xl border border-border p-6">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2"><i class="fa-solid fa-tags text-accent"></i> Popular Tags</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#React</a>
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#Node.js</a>
+                            <a href="#" class="bg-cyan-50 text-cyan-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-200">#CSS</a>
+                            <a href="#" class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-200">#Startup</a>
+                            <a href="#" class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-green-500 hover:text-white transition-all duration-200">#OpenSource</a>
+                            <a href="#" class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-200">#Career</a>
+                            <a href="#" class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-gray-500 hover:text-white transition-all duration-200">#Docker</a>
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#MongoDB</a>
+                        </div>
+                    </div>
+                    <div id="sidebar-newsletter" class="bg-gradient-to-br from-primary to-indigo-900 rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-accent opacity-20 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-envelope-open-text text-white"></i></div>
+                            <h3 class="font-bold text-white text-sm mb-2">Stay in the Loop</h3>
+                            <p class="text-indigo-200 text-xs leading-relaxed mb-4">Get new posts delivered straight to your inbox. No spam, ever.</p>
+                            <input type="email" placeholder="your@email.com" class="w-full px-3 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-white/30 mb-3 backdrop-blur-sm" />
+                            <button class="w-full bg-white text-primary text-xs font-bold py-2.5 rounded-lg hover:bg-indigo-50 transition-all duration-200">Subscribe →</button>
+                        </div>
+                    </div>
+                    <div id="sidebar-github" class="bg-white rounded-2xl border border-border p-6">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2"><i class="fa-brands fa-github text-primary"></i> GitHub Activity</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3"><div class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-code-branch text-accent text-xs"></i></div><div class="flex-1 min-w-0"><p class="text-xs font-semibold text-primary truncate">taskflow/main</p><p class="text-xs text-muted">Pushed 3 commits · 2h ago</p></div></div>
+                            <div class="flex items-center gap-3"><div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-star text-green-500 text-xs"></i></div><div class="flex-1 min-w-0"><p class="text-xs font-semibold text-primary truncate">Tuan Mifzal Fawwaz bin Tuan Fauzi ⭐ 47 stars</p><p class="text-xs text-muted">Portfolio repo · Updated today</p></div></div>
+                            <div class="flex items-center gap-3"><div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-code-pull-request text-purple-500 text-xs"></i></div><div class="flex-1 min-w-0"><p class="text-xs font-semibold text-primary truncate">PR merged to open-source/lib</p><p class="text-xs text-muted">Contribution · Yesterday</p></div></div>
+                        </div>
+                        <a href="#" class="mt-4 flex items-center justify-center gap-2 text-xs text-muted hover:text-accent font-semibold transition-colors duration-200 pt-4 border-t border-border"><i class="fa-brands fa-github"></i> View GitHub Profile</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="related-posts" class="py-14 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-accentSoft text-accent px-3 py-1.5 rounded-full text-xs font-semibold mb-3 border border-indigo-100"><i class="fa-solid fa-layer-group text-xs"></i> Related Reading</div>
+                    <h2 class="text-2xl font-extrabold text-primary">You Might Also Like</h2>
+                </div>
+                <a href="blog.html" class="hidden sm:flex items-center gap-2 text-accent text-sm font-semibold hover:gap-3 transition-all duration-200">View All Posts <i class="fa-solid fa-arrow-right text-xs"></i></a>
+            </div>
+            <div id="related-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div id="related-card-1" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:border-accent transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div class="h-48 overflow-hidden relative"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7c0a675705-a82bec1ca3032574d467.png" alt="responsive web design on multiple devices, laptop tablet phone, clean UI mockup, modern digital illustration" /><div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Tutorial</span></div></div>
+                    <div class="p-6 flex flex-col flex-1"><div class="flex items-center gap-3 mb-3"><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-calendar text-accent"></i> Jun 5, 2025</span><span class="text-xs text-muted">·</span><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-clock text-accent"></i> 6 min read</span></div><h3 class="text-base font-bold text-primary mb-2 leading-snug group-hover:text-accent transition-colors duration-200">Responsive Design Mastery: Building Layouts That Work Everywhere</h3><p class="text-muted text-xs leading-relaxed mb-4 flex-1">A practical guide to responsive web design using CSS Grid, Flexbox, and Tailwind CSS.</p><div class="flex flex-wrap gap-1.5 mb-4"><span class="bg-cyan-50 text-cyan-600 text-xs font-semibold px-2.5 py-1 rounded-full">#CSS</span><span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#Tailwind</span></div><div class="flex items-center justify-between pt-4 border-t border-border"><div class="flex items-center gap-4 text-xs text-muted"><span class="flex items-center gap-1.5"><i class="fa-regular fa-heart"></i> 48</span><span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 12</span></div><a href="#" class="flex items-center gap-1.5 text-accent text-xs font-semibold hover:gap-2.5 transition-all duration-200">Read <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+                </div>
+                <div id="related-card-2" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:border-accent transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div class="h-48 overflow-hidden relative"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/917e17590b-8536ee35013cf5118024.png" alt="entrepreneurship student startup pitch presentation, whiteboard ideas, brainstorming session, modern office, vibrant colors" /><div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Entrepreneurship</span></div></div>
+                    <div class="p-6 flex flex-col flex-1"><div class="flex items-center gap-3 mb-3"><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-calendar text-accent"></i> May 14, 2025</span><span class="text-xs text-muted">·</span><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-clock text-accent"></i> 5 min read</span></div><h3 class="text-base font-bold text-primary mb-2 leading-snug group-hover:text-accent transition-colors duration-200">5 Entrepreneurial Skills Every CS Student Should Develop</h3><p class="text-muted text-xs leading-relaxed mb-4 flex-1">Being a great coder isn't enough. Here are the entrepreneurial skills I've been actively building alongside my technical abilities.</p><div class="flex flex-wrap gap-1.5 mb-4"><span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Startup</span><span class="bg-purple-50 text-purple-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Career</span></div><div class="flex items-center justify-between pt-4 border-t border-border"><div class="flex items-center gap-4 text-xs text-muted"><span class="flex items-center gap-1.5"><i class="fa-regular fa-heart"></i> 93</span><span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 27</span></div><a href="#" class="flex items-center gap-1.5 text-accent text-xs font-semibold hover:gap-2.5 transition-all duration-200">Read <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+                </div>
+                <div id="related-card-3" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:border-accent transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div class="h-48 overflow-hidden relative"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5b9899fe49-791351a50691935ac6a0.png" alt="internship software engineer first day startup office modern workspace, young developer professional environment" /><div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Career</span></div></div>
+                    <div class="p-6 flex flex-col flex-1"><div class="flex items-center gap-3 mb-3"><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-calendar text-accent"></i> Feb 18, 2025</span><span class="text-xs text-muted">·</span><span class="text-xs text-muted font-medium flex items-center gap-1.5"><i class="fa-regular fa-clock text-accent"></i> 6 min read</span></div><h3 class="text-base font-bold text-primary mb-2 leading-snug group-hover:text-accent transition-colors duration-200">What My Startup Internship Taught Me That University Couldn't</h3><p class="text-muted text-xs leading-relaxed mb-4 flex-1">Six months at NovaTech was a masterclass in real-world software development, agile ceremonies, and startup culture.</p><div class="flex flex-wrap gap-1.5 mb-4"><span class="bg-purple-50 text-purple-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Career</span><span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Growth</span></div><div class="flex items-center justify-between pt-4 border-t border-border"><div class="flex items-center gap-4 text-xs text-muted"><span class="flex items-center gap-1.5"><i class="fa-regular fa-heart"></i> 119</span><span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 42</span></div><a href="#" class="flex items-center gap-1.5 text-accent text-xs font-semibold hover:gap-2.5 transition-all duration-200">Read <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="post-cta" class="py-14 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-14 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                </div>
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <span class="font-mono text-indigo-300 text-sm font-semibold">// have a question or idea?</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Let's Build Something Together</h2>
+                        <p class="text-indigo-200 text-base max-w-xl leading-relaxed">Got a project idea, collaboration proposal, or just want to talk tech? I'm always open to connecting with fellow builders and learners.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                        <a href="#" class="bg-white text-primary px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg justify-center"><i class="fa-regular fa-envelope text-accent"></i> Get In Touch</a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm justify-center"><i class="fa-brands fa-github"></i> View GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4"><span class="font-mono text-accent font-semibold text-lg">&lt;</span><span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span><span class="font-mono text-accent font-semibold text-lg">/&gt;</span></div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3"><a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a><a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a><a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a><a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a></div>
+                </div>
+                <div id="footer-nav"><h4 class="text-white font-semibold text-sm mb-4">Navigation</h4><ul class="space-y-2.5"><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li><li><a href="blog.html" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li></ul></div>
+                <div id="footer-projects"><h4 class="text-white font-semibold text-sm mb-4">Projects</h4><ul class="space-y-2.5"><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li><li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p><div class="flex items-center gap-1 text-slate-500 text-sm"><span>Made with</span><i class="fa-solid fa-heart text-accent text-xs"></i><span>for learning</span></div></div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+
+            window.addEventListener('scroll', function() {
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = window.scrollY;
+                const pct = docHeight > 0 ? Math.round((scrolled / docHeight) * 100) : 0;
+                const progressFill = document.getElementById('progress-fill');
+                const sidebarProgress = document.getElementById('sidebar-progress');
+                const progressPct = document.getElementById('progress-pct');
+                if (progressFill) progressFill.style.width = pct + '%';
+                if (sidebarProgress) sidebarProgress.style.width = pct + '%';
+                if (progressPct) progressPct.textContent = pct + '%';
+            });
+
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+            let liked = false;
+            if (likeBtn && likeCount) {
+                likeBtn.addEventListener('click', function() {
+                    liked = !liked;
+                    const icon = likeBtn.querySelector('i');
+                    if (liked) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                        likeBtn.classList.add('text-red-500', 'border-red-200', 'bg-red-50');
+                        likeBtn.classList.remove('text-muted', 'border-border');
+                        likeCount.textContent = '149';
+                    } else {
+                        icon.classList.add('fa-regular');
+                        icon.classList.remove('fa-solid');
+                        likeBtn.classList.remove('text-red-500', 'border-red-200', 'bg-red-50');
+                        likeBtn.classList.add('text-muted', 'border-border');
+                        likeCount.textContent = '148';
+                    }
+                });
+            }
+
+            const copyBtn = document.getElementById('copy-btn');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', function() {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    copyBtn.classList.add('bg-green-50', 'text-green-600', 'border-green-100');
+                    copyBtn.classList.remove('bg-accentSoft', 'text-accent', 'border-indigo-100');
+                    setTimeout(function() {
+                        copyBtn.innerHTML = originalText;
+                        copyBtn.classList.remove('bg-green-50', 'text-green-600', 'border-green-100');
+                        copyBtn.classList.add('bg-accentSoft', 'text-accent', 'border-indigo-100');
+                    }, 2000);
+                });
+            }
+
+            const copyLinkBtn = document.getElementById('copy-link-btn');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    const icon = copyLinkBtn.querySelector('i');
+                    icon.classList.remove('fa-link');
+                    icon.classList.add('fa-check');
+                    setTimeout(function() {
+                        icon.classList.add('fa-link');
+                        icon.classList.remove('fa-check');
+                    }, 2000);
+                });
+            }
+
+            const tocLinks = document.querySelectorAll('#sidebar-toc a');
+            tocLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    tocLinks.forEach(function(l) {
+                        l.classList.remove('bg-accentSoft', 'text-accent', 'font-semibold');
+                        l.classList.add('text-muted', 'font-medium');
+                    });
+                    link.classList.add('bg-accentSoft', 'text-accent', 'font-semibold');
+                    link.classList.remove('text-muted', 'font-medium');
+                });
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="post-hero" class="pt-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 relative z-10">
+            <div id="breadcrumb" class="flex items-center gap-2 text-xs text-muted mb-6">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Home</a>
+                <i class="fa-solid fa-chevron-right text-xs text-border"></i>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Blog</a>
+                <i class="fa-solid fa-chevron-right text-xs text-border"></i>
+                <span class="text-primary font-medium truncate max-w-xs">Building TaskFlow: From Idea to 150+ Beta Users</span>
+            </div>
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap items-center gap-2 mb-5">
+                    <span class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-star text-xs"></i> Featured
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-accentSoft text-accent text-xs font-semibold px-3 py-1 rounded-full border border-indigo-100">
+                        <i class="fa-solid fa-file-code text-xs"></i> Project Docs
+                    </span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary leading-tight mb-5">
+                    Building TaskFlow: From Idea to<br class="hidden sm:block">
+                    <span class="text-accent">150+ Beta Users in 3 Months</span>
+                </h1>
+                <p class="text-muted text-lg leading-relaxed mb-6 max-w-2xl">
+                    A deep dive into how I co-founded a student project management tool — the technical decisions, the mistakes, the pivots, and what we learned about building for a niche audience.
+                </p>
+                <div class="flex flex-wrap items-center gap-5 mb-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-10 h-10 rounded-full object-cover border-2 border-border" />
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Mifzal Fawwaz</p>
+                            <p class="text-xs text-muted">CS Student & Founder</p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-px bg-border hidden sm:block"></div>
+                    <div class="flex flex-wrap items-center gap-4 text-xs text-muted">
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-accent"></i> May 28, 2025</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-accent"></i> 8 min read</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye text-accent"></i> 3,241 views</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-heart text-accent"></i> 148 likes</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#React</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#Node.js</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MongoDB</span>
+                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Startup</span>
+                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#ProductDev</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="post-cover" class="bg-white pb-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl">
+                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/aee8567266-6902889a0312207fb72e.png" alt="developer coding workspace with multiple monitors, dark theme, code editor, modern tech setup, professional photography style, indigo purple accent lighting" />
+            </div>
+        </div>
+    </section>
+
+    <section id="post-body" class="py-12 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-10">
+
+                <div id="post-content-column" class="flex-1 min-w-0">
+
+                    <div id="reading-progress-bar" class="fixed top-16 left-0 right-0 z-40 h-0.5 bg-border">
+                        <div id="progress-fill" class="h-full bg-accent transition-all duration-100" style="width: 0%"></div>
+                    </div>
+
+                    <div id="share-floating" class="hidden xl:flex flex-col items-center gap-3 fixed left-6 top-1/2 -translate-y-1/2 z-30">
+                        <span class="text-xs text-muted font-semibold writing-mode-vertical rotate-180" style="writing-mode: vertical-rl;">Share</span>
+                        <div class="w-px h-8 bg-border"></div>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-blue-600 hover:border-blue-200 transition-all duration-200">
+                            <i class="fa-brands fa-twitter text-sm"></i>
+                        </button>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-blue-700 hover:border-blue-200 transition-all duration-200">
+                            <i class="fa-brands fa-linkedin text-sm"></i>
+                        </button>
+                        <button class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-gray-900 hover:border-gray-300 transition-all duration-200">
+                            <i class="fa-brands fa-github text-sm"></i>
+                        </button>
+                        <button id="copy-link-btn" class="w-9 h-9 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all duration-200">
+                            <i class="fa-solid fa-link text-sm"></i>
+                        </button>
+                    </div>
+
+                    <article id="article-content" class="bg-white rounded-3xl border border-border p-8 lg:p-12 mb-8">
+
+                        <div id="article-intro" class="mb-10">
+                            <div class="bg-accentSoft border border-indigo-100 rounded-2xl p-6 mb-8">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-circle-info text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-primary mb-1">TL;DR</p>
+                                        <p class="text-sm text-muted leading-relaxed">We built TaskFlow — a project management tool for students — in 3 months, reached 150+ beta users, and learned invaluable lessons about product-market fit, full-stack architecture, and entrepreneurship. This post covers everything.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-base text-muted leading-relaxed mb-5">
+                                It started with a frustration. My team and I were constantly switching between Notion, WhatsApp, and a shared Google Doc to manage our university group projects. We were CS students — surely we could build something better. So we did.
+                            </p>
+                            <p class="text-base text-muted leading-relaxed">
+                                TaskFlow began as a weekend hack. Three months later, it had 150+ active beta users, a waitlist, and had been featured in our university's tech newsletter. Here's the full, unfiltered story of how we built it.
+                            </p>
+                        </div>
+
+                        <div id="article-section-1" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">01</span>
+                                The Problem We Were Solving
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-4">
+                                We surveyed 40 students across 6 departments and found a consistent pattern: group project management was painful. The core issues were:
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i>
+                                    <span class="text-sm text-muted leading-relaxed">Fragmented communication across too many platforms</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i>
+                                    <span class="text-sm text-muted leading-relaxed">No deadline visibility for all team members simultaneously</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i>
+                                    <span class="text-sm text-muted leading-relaxed">Existing tools like Jira and Asana were too complex for academic contexts</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i>
+                                    <span class="text-sm text-muted leading-relaxed">No integration with university submission portals or calendars</span>
+                                </li>
+                            </ul>
+                            <p class="text-base text-muted leading-relaxed">
+                                The insight was clear: students needed a lightweight, opinionated tool built specifically for academic project workflows — not a watered-down enterprise solution.
+                            </p>
+                        </div>
+
+                        <div id="article-section-2" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">02</span>
+                                Technical Architecture
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">
+                                We chose a MERN stack (MongoDB, Express, React, Node.js) for the core application. Here's how our architecture looked after the first major iteration:
+                            </p>
+
+                            <div id="architecture-diagram" class="bg-primary rounded-2xl p-6 mb-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i class="fa-brands fa-react text-cyan-400 text-lg"></i>
+                                            <span class="text-white text-sm font-bold">Frontend</span>
+                                        </div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>React 18 + Vite</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Tailwind CSS</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>React Query</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Socket.io Client</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i class="fa-brands fa-node-js text-green-400 text-lg"></i>
+                                            <span class="text-white text-sm font-bold">Backend</span>
+                                        </div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Node.js + Express</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>REST API</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Socket.io Server</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>JWT Auth</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i class="fa-solid fa-database text-yellow-400 text-lg"></i>
+                                            <span class="text-white text-sm font-bold">Data & Infra</span>
+                                        </div>
+                                        <ul class="space-y-1.5">
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MongoDB Atlas</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Redis Cache</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Vercel + Railway</li>
+                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Cloudinary</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-base text-muted leading-relaxed mb-6">
+                                One of our biggest technical decisions was implementing real-time collaboration via WebSockets. Here's the core socket setup we used for task updates:
+                            </p>
+
+                            <div id="code-snippet-1" class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                        <span class="ml-3 font-mono text-xs text-indigo-300">socket.js</span>
+                                    </div>
+                                    <button class="text-xs text-indigo-300 hover:text-white font-mono flex items-center gap-1.5 transition-colors duration-200">
+                                        <i class="fa-regular fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-indigo-300">// Real-time task update handler</span>
+<span class="text-purple-300">io</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'connection'</span><span class="text-white">, (</span><span class="text-orange-300">socket</span><span class="text-white">) => {</span>
+
+  <span class="text-indigo-300">// Join a project room</span>
+  <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'join-project'</span><span class="text-white">, (</span><span class="text-orange-300">projectId</span><span class="text-white">) => {</span>
+    <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">join</span><span class="text-white">(</span><span class="text-orange-300">projectId</span><span class="text-white">);</span>
+    <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">emit</span><span class="text-white">(</span><span class="text-green-300">'joined'</span><span class="text-white">, { </span><span class="text-orange-300">projectId</span><span class="text-white"> });</span>
+  <span class="text-white">});</span>
+
+  <span class="text-indigo-300">// Broadcast task updates to all team members</span>
+  <span class="text-orange-300">socket</span><span class="text-white">.</span><span class="text-yellow-300">on</span><span class="text-white">(</span><span class="text-green-300">'task-update'</span><span class="text-white">, async (</span><span class="text-orange-300">data</span><span class="text-white">) => {</span>
+    <span class="text-purple-300">const</span> <span class="text-white">updated = await </span><span class="text-purple-300">Task</span><span class="text-white">.</span><span class="text-yellow-300">findByIdAndUpdate</span><span class="text-white">(</span>
+      <span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">taskId</span><span class="text-white">,</span>
+      <span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">updates</span><span class="text-white">,</span>
+      <span class="text-white">{ </span><span class="text-orange-300">new</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> }</span>
+    <span class="text-white">);</span>
+    <span class="text-purple-300">io</span><span class="text-white">.</span><span class="text-yellow-300">to</span><span class="text-white">(</span><span class="text-orange-300">data</span><span class="text-white">.</span><span class="text-orange-300">projectId</span><span class="text-white">).</span><span class="text-yellow-300">emit</span><span class="text-white">(</span><span class="text-green-300">'task-updated'</span><span class="text-white">, updated);</span>
+  <span class="text-white">});</span>
+
+<span class="text-white">});</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-section-3" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">03</span>
+                                The Pivot That Changed Everything
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-5">
+                                At week 6, we had 20 users and almost zero engagement. Our original vision was a full-featured project management suite. We were wrong about what students actually needed.
+                            </p>
+
+                            <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-orange-800 mb-1">Key Insight</p>
+                                        <p class="text-sm text-orange-700 leading-relaxed">Students didn't want a project management tool. They wanted a <strong>deadline accountability system</strong> with built-in team notifications. We stripped 60% of the features and rebuilt around this core insight.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-base text-muted leading-relaxed mb-5">
+                                After the pivot, we launched a stripped-down v2 in 2 weeks. The results were immediate: daily active users went from 4 to 47 within the first week of the new release.
+                            </p>
+
+                            <div class="h-64 overflow-hidden rounded-2xl border border-border">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/811ebfee0f-d83c35cccbb83ebb8bc3.png" alt="product analytics dashboard showing growth curve, user metrics, startup growth chart, clean modern data visualization, indigo blue colors" />
+                            </div>
+                        </div>
+
+                        <div id="article-section-4" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">04</span>
+                                Growth: 0 to 150+ Users
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">
+                                We didn't run ads. Our entire growth was word-of-mouth, campus ambassador outreach, and one well-timed Reddit post. Here's a breakdown of our acquisition channels:
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-accentSoft rounded-2xl p-5 text-center border border-indigo-100">
+                                    <div class="text-3xl font-extrabold text-accent mb-1">63%</div>
+                                    <div class="text-xs text-muted font-medium">Word of Mouth</div>
+                                </div>
+                                <div class="bg-green-50 rounded-2xl p-5 text-center border border-green-100">
+                                    <div class="text-3xl font-extrabold text-green-600 mb-1">24%</div>
+                                    <div class="text-xs text-muted font-medium">Campus Outreach</div>
+                                </div>
+                                <div class="bg-orange-50 rounded-2xl p-5 text-center border border-orange-100">
+                                    <div class="text-3xl font-extrabold text-orange-600 mb-1">13%</div>
+                                    <div class="text-xs text-muted font-medium">Reddit / Social</div>
+                                </div>
+                            </div>
+
+                            <p class="text-base text-muted leading-relaxed">
+                                The Reddit post on r/cscareerquestions titled "I built a project management tool for CS students — here's what I learned" got 847 upvotes and drove 60 sign-ups in 48 hours. Authentic storytelling beats any ad spend.
+                            </p>
+                        </div>
+
+                        <div id="article-section-5" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">05</span>
+                                Key Lessons & Takeaways
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border">
+                                    <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-users text-accent text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary text-sm mb-1">Talk to your users before writing a single line of code</h4>
+                                        <p class="text-sm text-muted leading-relaxed">We wasted 3 weeks building features nobody asked for. User interviews are the most valuable engineering time you'll spend.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border">
+                                    <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-scissors text-green-500 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary text-sm mb-1">Simplicity is a feature, not a limitation</h4>
+                                        <p class="text-sm text-muted leading-relaxed">Stripping 60% of our features doubled our engagement. Constraint breeds clarity.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border">
+                                    <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-rocket text-orange-500 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary text-sm mb-1">Ship early, iterate fast</h4>
+                                        <p class="text-sm text-muted leading-relaxed">Our v1 was embarrassingly rough. But the feedback we got in week 1 was worth more than any amount of pre-launch polish.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border">
+                                    <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-pen-nib text-purple-500 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary text-sm mb-1">Document everything publicly</h4>
+                                        <p class="text-sm text-muted leading-relaxed">Writing this blog post drove more sign-ups than any feature we shipped. Building in public is a growth strategy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-code-2" class="mb-10">
+                            <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
+                                <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">06</span>
+                                The Task Schema That Evolved
+                            </h2>
+                            <p class="text-base text-muted leading-relaxed mb-6">
+                                Our MongoDB task schema went through 4 iterations. Here's the final version that supported all our core features:
+                            </p>
+                            <div id="code-snippet-2" class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                        <span class="ml-3 font-mono text-xs text-indigo-300">Task.model.js</span>
+                                    </div>
+                                    <button class="text-xs text-indigo-300 hover:text-white font-mono flex items-center gap-1.5 transition-colors duration-200">
+                                        <i class="fa-regular fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-purple-300">const</span> <span class="text-white">taskSchema = </span><span class="text-purple-300">new</span> <span class="text-yellow-300">Schema</span><span class="text-white">({</span>
+  <span class="text-orange-300">title</span><span class="text-white">:    { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">required</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> },</span>
+  <span class="text-orange-300">status</span><span class="text-white">:   { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">enum</span><span class="text-white">: [</span><span class="text-green-300">'todo'</span><span class="text-white">, </span><span class="text-green-300">'in-progress'</span><span class="text-white">, </span><span class="text-green-300">'done'</span><span class="text-white">] },</span>
+  <span class="text-orange-300">assignee</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">ObjectId</span><span class="text-white">, </span><span class="text-orange-300">ref</span><span class="text-white">: </span><span class="text-green-300">'User'</span><span class="text-white"> },</span>
+  <span class="text-orange-300">deadline</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">Date</span><span class="text-white">, </span><span class="text-orange-300">required</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> },</span>
+  <span class="text-orange-300">project</span><span class="text-white">:  { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">ObjectId</span><span class="text-white">, </span><span class="text-orange-300">ref</span><span class="text-white">: </span><span class="text-green-300">'Project'</span><span class="text-white"> },</span>
+  <span class="text-orange-300">tags</span><span class="text-white">:     [</span><span class="text-purple-300">String</span><span class="text-white">],</span>
+  <span class="text-orange-300">priority</span><span class="text-white">: { </span><span class="text-orange-300">type</span><span class="text-white">: </span><span class="text-purple-300">String</span><span class="text-white">, </span><span class="text-orange-300">enum</span><span class="text-white">: [</span><span class="text-green-300">'low'</span><span class="text-white">, </span><span class="text-green-300">'medium'</span><span class="text-white">, </span><span class="text-green-300">'high'</span><span class="text-white">] },</span>
+<span class="text-white">}, { </span><span class="text-orange-300">timestamps</span><span class="text-white">: </span><span class="text-purple-300">true</span><span class="text-white"> });</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-conclusion" class="mb-8">
+                            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-2xl p-8 text-center relative overflow-hidden">
+                                <div class="absolute inset-0 pointer-events-none">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <i class="fa-solid fa-flag-checkered text-white text-lg"></i>
+                                    </div>
+                                    <h3 class="text-xl font-extrabold text-white mb-3">What's Next for TaskFlow?</h3>
+                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">We're working on a calendar integration, a mobile app, and exploring a freemium model. If you're a student and want early access, drop your email below.</p>
+                                    <div class="flex gap-2 max-w-sm mx-auto">
+                                        <input type="email" placeholder="your@email.com" class="flex-1 px-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-sm placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-white/30" />
+                                        <button class="bg-accent text-white px-4 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-500 transition-all duration-200 whitespace-nowrap">Join Beta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="article-tags" class="pt-6 border-t border-border">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-xs font-semibold text-muted mr-1">Tags:</span>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#React</a>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#Node.js</a>
+                                <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#MongoDB</a>
+                                <a href="#" class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-200">#Startup</a>
+                                <a href="#" class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-green-500 hover:text-white transition-all duration-200">#ProductDev</a>
+                                <a href="#" class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-200">#MERN</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div id="share-section" class="bg-white rounded-2xl border border-border p-6 mb-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-primary text-sm mb-1">Found this helpful? Share it!</h3>
+                                <p class="text-xs text-muted">Help other students discover this post</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 text-xs font-semibold hover:bg-blue-500 hover:text-white transition-all duration-200">
+                                    <i class="fa-brands fa-twitter"></i> Twitter
+                                </button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-700 border border-blue-100 text-xs font-semibold hover:bg-blue-700 hover:text-white transition-all duration-200">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 text-gray-700 border border-gray-200 text-xs font-semibold hover:bg-gray-700 hover:text-white transition-all duration-200">
+                                    <i class="fa-brands fa-reddit"></i> Reddit
+                                </button>
+                                <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-accentSoft text-accent border border-indigo-100 text-xs font-semibold hover:bg-accent hover:text-white transition-all duration-200">
+                                    <i class="fa-solid fa-link"></i> Copy Link
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-5 border-t border-border flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <button id="like-btn" class="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-muted text-sm font-semibold hover:border-red-200 hover:text-red-500 hover:bg-red-50 transition-all duration-200">
+                                    <i class="fa-regular fa-heart"></i> <span id="like-count">148</span> Likes
+                                </button>
+                                <button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-muted text-sm font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200">
+                                    <i class="fa-regular fa-bookmark"></i> Save
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-xs text-muted">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>3,241 views</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="author-card" class="bg-white rounded-2xl border border-border p-6 mb-8">
+                        <div class="flex flex-col sm:flex-row items-start gap-5">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-20 h-20 rounded-2xl object-cover border-2 border-border flex-shrink-0" />
+                            <div class="flex-1 min-w-0">
+                                <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+                                    <div>
+                                        <h3 class="font-extrabold text-primary text-lg">Mifzal Fawwaz</h3>
+                                        <p class="text-xs text-muted">CS Student · Co-founder of TaskFlow · Blogger</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-github text-lg"></i></a>
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                                        <a href="#" class="text-muted hover:text-accent transition-colors duration-200"><i class="fa-brands fa-twitter text-lg"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-4">
+                                    I'm a final-year CS student building entrepreneurial software projects and writing about the journey. I believe in learning by building and sharing everything along the way.
+                                </p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-indigo-700 transition-all duration-200">Follow</a>
+                                    <a href="#" class="border border-border text-primary px-4 py-2 rounded-lg text-xs font-bold hover:border-accent hover:text-accent transition-all duration-200">View All Posts</a>
+                                    <span class="text-xs text-muted flex items-center gap-1.5 ml-auto"><i class="fa-solid fa-pen-nib text-accent"></i> 12 articles published</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="post-navigation" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <a href="#" class="bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all duration-300 group flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 group-hover:bg-accentSoft transition-colors duration-200">
+                                <i class="fa-solid fa-arrow-left text-muted group-hover:text-accent text-xs transition-colors duration-200"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-xs text-muted mb-1">Previous Post</p>
+                                <h4 class="text-sm font-bold text-primary group-hover:text-accent transition-colors duration-200 leading-snug line-clamp-2">5 Entrepreneurial Skills Every CS Student Should Develop</h4>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all duration-300 group flex items-start gap-3 sm:flex-row-reverse sm:text-right">
+                            <div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 group-hover:bg-accentSoft transition-colors duration-200">
+                                <i class="fa-solid fa-arrow-right text-muted group-hover:text-accent text-xs transition-colors duration-200"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-xs text-muted mb-1">Next Post</p>
+                                <h4 class="text-sm font-bold text-primary group-hover:text-accent transition-colors duration-200 leading-snug line-clamp-2">Responsive Design Mastery: Building Layouts That Work Everywhere</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="comments-section" class="bg-white rounded-2xl border border-border p-6 lg:p-8 mb-8">
+                        <h3 class="font-extrabold text-primary text-xl mb-6 flex items-center gap-3">
+                            <i class="fa-regular fa-comments text-accent"></i>
+                            Comments <span class="text-base font-semibold text-muted">(14)</span>
+                        </h3>
+
+                        <div id="comment-form" class="mb-8">
+                            <div class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="You" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <textarea placeholder="Share your thoughts or ask a question..." class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 resize-none h-24"></textarea>
+                                    <div class="flex items-center justify-between mt-2">
+                                        <span class="text-xs text-muted">Be respectful and constructive</span>
+                                        <button class="bg-accent text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-indigo-700 transition-all duration-200 flex items-center gap-2">
+                                            <i class="fa-solid fa-paper-plane"></i> Post Comment
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comments-list" class="space-y-6">
+                            <div id="comment-1" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Marcus" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm font-bold text-primary">Marcus K.</span>
+                                                <span class="text-xs text-muted">· 2 days ago</span>
+                                            </div>
+                                            <button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1">
+                                                <i class="fa-regular fa-thumbs-up"></i> 12
+                                            </button>
+                                        </div>
+                                        <p class="text-sm text-muted leading-relaxed">This is exactly what I needed to read. I've been overthinking my side project and this post reminded me to just ship and iterate. The pivot story is gold — stripping features to focus on core value is something I always forget to do.</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2">
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button>
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button>
+                                    </div>
+                                    <div class="mt-4 ml-6 space-y-4">
+                                        <div class="flex items-start gap-3">
+                                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Alex" class="w-8 h-8 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                            <div class="flex-1">
+                                                <div class="bg-accentSoft rounded-2xl p-4 border border-indigo-100">
+                                                    <div class="flex items-center gap-2 mb-2">
+                                                        <span class="text-sm font-bold text-accent">Mifzal Fawwaz</span>
+                                                        <span class="text-xs bg-accent text-white px-1.5 py-0.5 rounded-full font-semibold">Author</span>
+                                                        <span class="text-xs text-muted">· 1 day ago</span>
+                                                    </div>
+                                                    <p class="text-sm text-muted leading-relaxed">Thanks Marcus! The pivot was honestly painful at the time — we had to delete months of work. But it was the best decision we made. Good luck with your side project!</p>
+                                                </div>
+                                                <div class="flex items-center gap-3 mt-2 ml-2">
+                                                    <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button>
+                                                    <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="comment-2" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Priya" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm font-bold text-primary">Priya S.</span>
+                                                <span class="text-xs text-muted">· 3 days ago</span>
+                                            </div>
+                                            <button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1">
+                                                <i class="fa-regular fa-thumbs-up"></i> 8
+                                            </button>
+                                        </div>
+                                        <p class="text-sm text-muted leading-relaxed">The real-time WebSocket implementation is really clean! Quick question — did you run into any issues with scaling the Socket.io connections when you started getting more concurrent users? Would love to know how you handled that.</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2">
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button>
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="comment-3" class="flex items-start gap-4">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="James" class="w-10 h-10 rounded-full object-cover border-2 border-border flex-shrink-0" />
+                                <div class="flex-1">
+                                    <div class="bg-surface rounded-2xl p-4 border border-border">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm font-bold text-primary">James T.</span>
+                                                <span class="text-xs text-muted">· 4 days ago</span>
+                                            </div>
+                                            <button class="text-xs text-muted hover:text-accent transition-colors duration-200 flex items-center gap-1">
+                                                <i class="fa-regular fa-thumbs-up"></i> 5
+                                            </button>
+                                        </div>
+                                        <p class="text-sm text-muted leading-relaxed">Incredible documentation. The Reddit growth strategy is something I'll definitely try for my next project. Also, that architecture diagram is super helpful — would you consider open-sourcing the project?</p>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-2 ml-2">
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Reply</button>
+                                        <button class="text-xs text-muted hover:text-accent transition-colors duration-200 font-medium">Like</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="w-full py-3 rounded-xl border border-border text-sm text-muted font-semibold hover:border-accent hover:text-accent transition-all duration-200 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-chevron-down text-xs"></i> Load 11 more comments
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside id="post-sidebar" class="w-full lg:w-80 flex-shrink-0 space-y-6">
+
+                    <div id="sidebar-toc" class="bg-white rounded-2xl border border-border p-6 sticky top-20">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-list text-accent"></i> Table of Contents
+                        </h3>
+                        <nav class="space-y-1">
+                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200">
+                                <span class="font-mono text-accent/60 text-xs">01</span> The Problem We Were Solving
+                            </a>
+                            <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200">
+                                <span class="font-mono text-muted/60 text-xs">02</span> Technical Architecture
+                            </a>
+                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200">
+                                <span class="font-mono text-muted/60 text-xs">03</span> The Pivot That Changed Everything
+                            </a>
+                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200">
+                                <span class="font-mono text-muted/60 text-xs">04</span> Growth: 0 to 150+ Users
+                            </a>
+                            <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200">
+                                <span class="font-mono text-muted/60 text-xs">05</span> Key Lessons & Takeaways
+                            </a>
+                            <a href="#article-code-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200">
+                                <span class="font-mono text-muted/60 text-xs">06</span> The Task Schema
+                            </a>
+                        </nav>
+
+                        <div class="mt-5 pt-4 border-t border-border">
+                            <div class="flex items-center justify-between text-xs text-muted mb-2">
+                                <span>Reading progress</span>
+                                <span id="progress-pct">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                                <div id="sidebar-progress" class="h-full bg-accent rounded-full transition-all duration-200" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-about" class="bg-white rounded-2xl border border-border p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Mifzal Fawwaz" class="w-14 h-14 rounded-2xl object-cover border-2 border-border" />
+                            <div>
+                                <h3 class="font-bold text-primary">Mifzal Fawwaz</h3>
+                                <p class="text-xs text-muted">CS Student · Builder · Writer</p>
+                            </div>
+                        </div>
+                        <p class="text-muted text-sm leading-relaxed mb-4">Writing about software development, entrepreneurship, and everything I build and learn as a CS student.</p>
+                        <div class="flex gap-2">
+                            <a href="#" class="flex-1 text-center bg-accent text-white text-xs font-semibold py-2 rounded-lg hover:bg-indigo-700 transition-all duration-200">Follow</a>
+                            <a href="#" class="flex-1 text-center border border-border text-primary text-xs font-semibold py-2 rounded-lg hover:border-accent hover:text-accent transition-all duration-200">About Me</a>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-tags" class="bg-white rounded-2xl border border-border p-6">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-tags text-accent"></i> Popular Tags
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#React</a>
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#Node.js</a>
+                            <a href="#" class="bg-cyan-50 text-cyan-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-200">#CSS</a>
+                            <a href="#" class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-200">#Startup</a>
+                            <a href="#" class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-green-500 hover:text-white transition-all duration-200">#OpenSource</a>
+                            <a href="#" class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-200">#Career</a>
+                            <a href="#" class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-gray-500 hover:text-white transition-all duration-200">#Docker</a>
+                            <a href="#" class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">#MongoDB</a>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-newsletter" class="bg-gradient-to-br from-primary to-indigo-900 rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-accent opacity-20 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-envelope-open-text text-white"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm mb-2">Stay in the Loop</h3>
+                            <p class="text-indigo-200 text-xs leading-relaxed mb-4">Get new posts delivered straight to your inbox. No spam, ever.</p>
+                            <input type="email" placeholder="your@email.com" class="w-full px-3 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-white/30 mb-3 backdrop-blur-sm" />
+                            <button class="w-full bg-white text-primary text-xs font-bold py-2.5 rounded-lg hover:bg-indigo-50 transition-all duration-200">Subscribe →</button>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-github" class="bg-white rounded-2xl border border-border p-6">
+                        <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-brands fa-github text-primary"></i> GitHub Activity
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-code-branch text-accent text-xs"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-semibold text-primary truncate">taskflow/main</p>
+                                    <p class="text-xs text-muted">Pushed 3 commits · 2h ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-star text-green-500 text-xs"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-semibold text-primary truncate">Tuan Mifzal Fawwaz bin Tuan Fauzi ⭐ 47 stars</p>
+                                    <p class="text-xs text-muted">Portfolio repo · Updated today</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-code-pull-request text-purple-500 text-xs"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-semibold text-primary truncate">PR merged to open-source/lib</p>
+                                    <p class="text-xs text-muted">Contribution · Yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="mt-4 flex items-center justify-center gap-2 text-xs text-muted hover:text-accent font-semibold transition-colors duration-200 pt-4 border-t border-border">
+                            <i class="fa-brands fa-github"></i> View GitHub Profile
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog-cta" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-14 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                </div>
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <span class="font-mono text-indigo-300 text-sm font-semibold">// have a question or idea?</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Let's Build Something Together</h2>
+                        <p class="text-indigo-200 text-base max-w-xl leading-relaxed">Got a project idea, collaboration proposal, or just want to talk tech? I'm always open to connecting with fellow builders and learners.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                        <a href="#" class="bg-white text-primary px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg justify-center">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm justify-center">
+                            <i class="fa-brands fa-github"></i> View GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                        <span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                        <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a>
+                    </div>
+                </div>
+                <div id="footer-nav">
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="footer-projects">
+                    <h4 class="text-white font-semibold text-sm mb-4">Projects</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-accent text-xs"></i>
+                    <span>for learning</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+
+            window.addEventListener('scroll', function() {
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = window.scrollY;
+                const pct = docHeight > 0 ? Math.round((scrolled / docHeight) * 100) : 0;
+                const progressFill = document.getElementById('progress-fill');
+                const sidebarProgress = document.getElementById('sidebar-progress');
+                const progressPct = document.getElementById('progress-pct');
+                if (progressFill) progressFill.style.width = pct + '%';
+                if (sidebarProgress) sidebarProgress.style.width = pct + '%';
+                if (progressPct) progressPct.textContent = pct + '%';
+            });
+
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+            let liked = false;
+            if (likeBtn && likeCount) {
+                likeBtn.addEventListener('click', function() {
+                    liked = !liked;
+                    const icon = likeBtn.querySelector('i');
+                    if (liked) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                        likeBtn.classList.add('text-red-500', 'border-red-200', 'bg-red-50');
+                        likeBtn.classList.remove('text-muted', 'border-border');
+                        likeCount.textContent = '149';
+                    } else {
+                        icon.classList.add('fa-regular');
+                        icon.classList.remove('fa-solid');
+                        likeBtn.classList.remove('text-red-500', 'border-red-200', 'bg-red-50');
+                        likeBtn.classList.add('text-muted', 'border-border');
+                        likeCount.textContent = '148';
+                    }
+                });
+            }
+
+            const copyBtn = document.getElementById('copy-btn');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', function() {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    copyBtn.classList.add('bg-green-50', 'text-green-600', 'border-green-100');
+                    copyBtn.classList.remove('bg-accentSoft', 'text-accent', 'border-indigo-100');
+                    setTimeout(function() {
+                        copyBtn.innerHTML = originalText;
+                        copyBtn.classList.remove('bg-green-50', 'text-green-600', 'border-green-100');
+                        copyBtn.classList.add('bg-accentSoft', 'text-accent', 'border-indigo-100');
+                    }, 2000);
+                });
+            }
+
+            const copyLinkBtn = document.getElementById('copy-link-btn');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    const icon = copyLinkBtn.querySelector('i');
+                    icon.classList.remove('fa-link');
+                    icon.classList.add('fa-check');
+                    setTimeout(function() {
+                        icon.classList.add('fa-link');
+                        icon.classList.remove('fa-check');
+                    }, 2000);
+                });
+            }
+
+            const tocLinks = document.querySelectorAll('#sidebar-toc a');
+            tocLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    tocLinks.forEach(function(l) {
+                        l.classList.remove('bg-accentSoft', 'text-accent', 'font-semibold');
+                        l.classList.add('text-muted', 'font-medium');
+                    });
+                    link.classList.add('bg-accentSoft', 'text-accent', 'font-semibold');
+                    link.classList.remove('text-muted', 'font-medium');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

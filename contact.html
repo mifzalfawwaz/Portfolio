@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="contact-hero" class="pt-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 relative z-10">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-accentSoft text-accent px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border border-indigo-100">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Get In Touch
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight mb-5">
+                    Let's <span class="text-accent">Connect</span> &amp;<br class="hidden sm:block"> Build Together
+                </h1>
+                <p class="text-muted text-lg leading-relaxed max-w-xl">
+                    Have a project idea, collaboration proposal, or just want to talk tech? I'm always open to connecting with fellow builders, learners, and potential collaborators.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-main" class="py-14 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-10">
+
+                <div id="contact-form-col" class="flex-1 min-w-0">
+                    <div id="contact-form-card" class="bg-white rounded-3xl border border-border p-8 lg:p-10">
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-extrabold text-primary mb-2">Send Me a Message</h2>
+                            <p class="text-muted text-sm">Fill out the form below and I'll get back to you within 24–48 hours.</p>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6" novalidate>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div id="field-name" class="flex flex-col gap-1.5">
+                                    <label for="name" class="text-sm font-semibold text-primary">Full Name <span class="text-accent">*</span></label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <i class="fa-regular fa-user text-muted text-sm"></i>
+                                        </div>
+                                        <input type="text" id="name" name="name" placeholder="Mifzal Fawwaz" class="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200" />
+                                    </div>
+                                </div>
+                                <div id="field-email" class="flex flex-col gap-1.5">
+                                    <label for="email" class="text-sm font-semibold text-primary">Email Address <span class="text-accent">*</span></label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <i class="fa-regular fa-envelope text-muted text-sm"></i>
+                                        </div>
+                                        <input type="email" id="email" name="email" placeholder="you@email.com" class="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="field-subject" class="flex flex-col gap-1.5">
+                                <label for="subject" class="text-sm font-semibold text-primary">Subject <span class="text-accent">*</span></label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i class="fa-regular fa-file-lines text-muted text-sm"></i>
+                                    </div>
+                                    <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Internship / Just Saying Hi" class="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200" />
+                                </div>
+                            </div>
+
+                            <div id="field-inquiry-type" class="flex flex-col gap-1.5">
+                                <label class="text-sm font-semibold text-primary">Inquiry Type</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <button type="button" class="inquiry-tag active-tag px-4 py-2 rounded-xl border border-accent bg-accentSoft text-accent text-xs font-semibold transition-all duration-200">
+                                        <i class="fa-solid fa-handshake mr-1.5"></i> Collaboration
+                                    </button>
+                                    <button type="button" class="inquiry-tag px-4 py-2 rounded-xl border border-border bg-surface text-muted text-xs font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200">
+                                        <i class="fa-solid fa-briefcase mr-1.5"></i> Internship / Job
+                                    </button>
+                                    <button type="button" class="inquiry-tag px-4 py-2 rounded-xl border border-border bg-surface text-muted text-xs font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200">
+                                        <i class="fa-solid fa-comments mr-1.5"></i> General Chat
+                                    </button>
+                                    <button type="button" class="inquiry-tag px-4 py-2 rounded-xl border border-border bg-surface text-muted text-xs font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200">
+                                        <i class="fa-solid fa-bug mr-1.5"></i> Feedback
+                                    </button>
+                                    <button type="button" class="inquiry-tag px-4 py-2 rounded-xl border border-border bg-surface text-muted text-xs font-semibold hover:border-accent hover:text-accent hover:bg-accentSoft transition-all duration-200">
+                                        <i class="fa-solid fa-circle-question mr-1.5"></i> Other
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="field-message" class="flex flex-col gap-1.5">
+                                <label for="message" class="text-sm font-semibold text-primary">Message <span class="text-accent">*</span></label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project, idea, or just say hello! The more detail you share, the better I can help..." class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 resize-none"></textarea>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-muted">Be as specific as possible — I love details!</span>
+                                    <span id="char-count" class="text-xs text-muted font-mono">0 / 1000</span>
+                                </div>
+                            </div>
+
+                            <div id="field-attachment" class="flex flex-col gap-1.5">
+                                <label class="text-sm font-semibold text-primary">Attachment <span class="text-xs text-muted font-normal">(optional)</span></label>
+                                <div id="drop-zone" class="border-2 border-dashed border-border rounded-xl px-6 py-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-accent hover:bg-accentSoft/30 transition-all duration-200 group">
+                                    <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center group-hover:bg-accent transition-colors duration-200">
+                                        <i class="fa-solid fa-cloud-arrow-up text-accent group-hover:text-white text-lg transition-colors duration-200"></i>
+                                    </div>
+                                    <p class="text-sm text-muted text-center">Drag & drop files here or <span class="text-accent font-semibold">browse</span></p>
+                                    <p class="text-xs text-muted">PDF, PNG, JPG up to 5MB</p>
+                                    <input type="file" class="hidden" id="file-input" accept=".pdf,.png,.jpg,.jpeg" />
+                                </div>
+                            </div>
+
+                            <div id="field-privacy" class="flex items-start gap-3">
+                                <input type="checkbox" id="privacy" name="privacy" class="mt-0.5 w-4 h-4 accent-indigo-600 rounded cursor-pointer" />
+                                <label for="privacy" class="text-xs text-muted leading-relaxed cursor-pointer">
+                                    I agree that my submitted data is being collected and stored to respond to my inquiry. I understand this data won't be shared with third parties.
+                                </label>
+                            </div>
+
+                            <div id="form-submit" class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                                <button type="submit" id="submit-btn" class="w-full sm:w-auto bg-accent text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-all duration-200 flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-100">
+                                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                                </button>
+                                <button type="reset" class="w-full sm:w-auto border border-border text-muted px-6 py-3.5 rounded-xl font-semibold text-sm hover:border-accent hover:text-accent transition-all duration-200 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-rotate-left text-xs"></i> Clear Form
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="success-message" class="hidden mt-6 bg-green-50 border border-green-200 rounded-2xl p-6 flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-circle-check text-green-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-800 mb-1">Message Sent Successfully!</h4>
+                                <p class="text-sm text-green-700 leading-relaxed">Thanks for reaching out! I'll review your message and get back to you within 24–48 hours. Looking forward to connecting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside id="contact-sidebar" class="w-full lg:w-96 flex-shrink-0 space-y-6">
+
+                    <div id="contact-info-card" class="bg-white rounded-3xl border border-border p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="images/fawwaz.jpg
+                            " alt="Mifzal Fawwaz" class="w-16 h-16 rounded-2xl object-cover border-2 border-border flex-shrink-0" />
+                            <div>
+                                <h3 class="font-extrabold text-primary text-lg">Mifzal Fawwaz</h3>
+                                <p class="text-xs text-muted">CS Student · Builder · Open to Opportunities</p>
+                                <div class="flex items-center gap-1.5 mt-1.5">
+                                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                    <span class="text-xs text-green-600 font-semibold">Available for projects</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div id="contact-email" class="flex items-center gap-4 p-4 bg-surface rounded-2xl border border-border hover:border-accent transition-all duration-200 group cursor-pointer">
+                                <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors duration-200">
+                                    <i class="fa-regular fa-envelope text-accent group-hover:text-white text-sm transition-colors duration-200"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs text-muted font-medium mb-0.5">Email</p>
+                                    <p class="text-sm font-semibold text-primary truncate">mifzalfawwaz71@gmail.com</p>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-muted group-hover:text-accent ml-auto transition-colors duration-200"></i>
+                            </div>
+                            <div id="contact-location" class="flex items-center gap-4 p-4 bg-surface rounded-2xl border border-border">
+                                <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot text-purple-500 text-sm"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs text-muted font-medium mb-0.5">Location</p>
+                                    <p class="text-sm font-semibold text-primary">Pasir Mas, Kelantan</p>
+                                </div>
+                            </div>
+                            <div id="contact-response" class="flex items-center gap-4 p-4 bg-surface rounded-2xl border border-border">
+                                <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-regular fa-clock text-orange-500 text-sm"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs text-muted font-medium mb-0.5">Response Time</p>
+                                    <p class="text-sm font-semibold text-primary">Within 24–48 hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-5 border-t border-border">
+                            <p class="text-xs text-muted font-semibold mb-3">Connect on Social</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#" id="social-github" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border bg-surface hover:border-gray-800 hover:bg-gray-800 hover:text-white text-muted text-xs font-semibold transition-all duration-200 group">
+                                    <i class="fa-brands fa-github text-base group-hover:text-white transition-colors duration-200"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="#" id="social-linkedin" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border bg-surface hover:border-blue-600 hover:bg-blue-600 hover:text-white text-muted text-xs font-semibold transition-all duration-200 group">
+                                    <i class="fa-brands fa-linkedin text-base group-hover:text-white transition-colors duration-200"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="#" id="social-twitter" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border bg-surface hover:border-sky-500 hover:bg-sky-500 hover:text-white text-muted text-xs font-semibold transition-all duration-200 group">
+                                    <i class="fa-brands fa-twitter text-base group-hover:text-white transition-colors duration-200"></i>
+                                    <span>Twitter</span>
+                                </a>
+                                <a href="#" id="social-dev" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border bg-surface hover:border-primary hover:bg-primary hover:text-white text-muted text-xs font-semibold transition-all duration-200 group">
+                                    <i class="fa-brands fa-dev text-base group-hover:text-white transition-colors duration-200"></i>
+                                    <span>Dev.to</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="availability-card" class="bg-white rounded-3xl border border-border p-8">
+                        <h3 class="font-bold text-primary text-sm mb-5 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-check text-accent"></i> Current Availability
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted">Freelance Projects</span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full border border-green-100">
+                                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Open
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted">Internship (Summer '25)</span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full border border-green-100">
+                                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Open
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted">Open Source Collab</span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full border border-green-100">
+                                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Open
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted">Full-time Roles</span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-100">
+                                    <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Limited
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-5 border-t border-border">
+                            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accentSoft text-accent py-2.5 rounded-xl text-xs font-bold hover:bg-accent hover:text-white transition-all duration-200">
+                                <i class="fa-solid fa-download text-xs"></i> Download Resume / CV
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="faq-card" class="bg-white rounded-3xl border border-border p-8">
+                        <h3 class="font-bold text-primary text-sm mb-5 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-accent"></i> Common Questions
+                        </h3>
+                        <div class="space-y-3" id="faq-list">
+                            <div class="faq-item border border-border rounded-xl overflow-hidden">
+                                <button class="faq-trigger w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-primary hover:bg-surface transition-colors duration-200">
+                                    <span>What technologies do you work with?</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-muted transition-transform duration-200"></i>
+                                </button>
+                                <div class="faq-body hidden px-4 pb-4">
+                                    <p class="text-xs text-muted leading-relaxed">I primarily work with React, Node.js, MongoDB, and Tailwind CSS. I'm also experienced with Python, SQL, Docker, and cloud platforms like Vercel and Railway.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-border rounded-xl overflow-hidden">
+                                <button class="faq-trigger w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-primary hover:bg-surface transition-colors duration-200">
+                                    <span>Are you available for part-time work?</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-muted transition-transform duration-200"></i>
+                                </button>
+                                <div class="faq-body hidden px-4 pb-4">
+                                    <p class="text-xs text-muted leading-relaxed">Yes! I'm currently a student but actively looking for part-time or freelance opportunities that align with my skills and schedule.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-border rounded-xl overflow-hidden">
+                                <button class="faq-trigger w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-primary hover:bg-surface transition-colors duration-200">
+                                    <span>Do you collaborate on open-source?</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-muted transition-transform duration-200"></i>
+                                </button>
+                                <div class="faq-body hidden px-4 pb-4">
+                                    <p class="text-xs text-muted leading-relaxed">Absolutely! I love contributing to open-source projects. Feel free to tag me in issues or send a collaboration request via GitHub.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-cta" class="py-14 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-14 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                </div>
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <span class="font-mono text-indigo-300 text-sm font-semibold">// prefer a quick chat?</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Book a 30-Minute Call</h2>
+                        <p class="text-indigo-200 text-base max-w-xl leading-relaxed">Sometimes it's easier to just talk. Schedule a free 30-minute call and let's discuss your idea, project, or opportunity directly.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                        <a href="#" class="bg-white text-primary px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg justify-center">
+                            <i class="fa-solid fa-calendar-days text-accent"></i> Schedule a Call
+                        </a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm justify-center">
+                            <i class="fa-brands fa-github"></i> View GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                        <span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                        <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a>
+                    </div>
+                </div>
+                <div id="footer-nav">
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="footer-projects">
+                    <h4 class="text-white font-semibold text-sm mb-4">Projects</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-accent text-xs"></i>
+                    <span>for learning</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+
+            const inquiryTags = document.querySelectorAll('.inquiry-tag');
+            inquiryTags.forEach(function(tag) {
+                tag.addEventListener('click', function() {
+                    inquiryTags.forEach(function(t) {
+                        t.classList.remove('active-tag', 'border-accent', 'bg-accentSoft', 'text-accent');
+                        t.classList.add('border-border', 'bg-surface', 'text-muted');
+                    });
+                    tag.classList.add('active-tag', 'border-accent', 'bg-accentSoft', 'text-accent');
+                    tag.classList.remove('border-border', 'bg-surface', 'text-muted');
+                });
+            });
+
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+            if (messageTextarea && charCount) {
+                messageTextarea.addEventListener('input', function() {
+                    const len = messageTextarea.value.length;
+                    charCount.textContent = len + ' / 1000';
+                    if (len > 900) {
+                        charCount.classList.add('text-orange-500');
+                        charCount.classList.remove('text-muted');
+                    } else {
+                        charCount.classList.remove('text-orange-500');
+                        charCount.classList.add('text-muted');
+                    }
+                    if (messageTextarea.value.length > 1000) {
+                        messageTextarea.value = messageTextarea.value.substring(0, 1000);
+                        charCount.textContent = '1000 / 1000';
+                    }
+                });
+            }
+
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            if (dropZone && fileInput) {
+                dropZone.addEventListener('click', function() {
+                    fileInput.click();
+                });
+                fileInput.addEventListener('change', function() {
+                    if (fileInput.files && fileInput.files.length > 0) {
+                        const fileName = fileInput.files[0].name;
+                        dropZone.innerHTML = '<div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-file-circle-check text-green-500 text-lg"></i></div><p class="text-sm font-semibold text-green-700">' + fileName + '</p><p class="text-xs text-muted">File attached successfully</p>';
+                    }
+                });
+                dropZone.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    dropZone.classList.add('border-accent', 'bg-accentSoft/30');
+                });
+                dropZone.addEventListener('dragleave', function() {
+                    dropZone.classList.remove('border-accent', 'bg-accentSoft/30');
+                });
+                dropZone.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    dropZone.classList.remove('border-accent', 'bg-accentSoft/30');
+                    const files = e.dataTransfer.files;
+                    if (files && files.length > 0) {
+                        const fileName = files[0].name;
+                        dropZone.innerHTML = '<div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-file-circle-check text-green-500 text-lg"></i></div><p class="text-sm font-semibold text-green-700">' + fileName + '</p><p class="text-xs text-muted">File attached successfully</p>';
+                    }
+                });
+            }
+
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            if (contactForm && submitBtn && successMessage) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                    setTimeout(function() {
+                        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                        successMessage.classList.remove('hidden');
+                        contactForm.reset();
+                        if (charCount) charCount.textContent = '0 / 1000';
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 1800);
+                });
+            }
+
+            const faqTriggers = document.querySelectorAll('.faq-trigger');
+            faqTriggers.forEach(function(trigger) {
+                trigger.addEventListener('click', function() {
+                    const body = trigger.nextElementSibling;
+                    const icon = trigger.querySelector('i');
+                    const isOpen = !body.classList.contains('hidden');
+                    faqTriggers.forEach(function(t) {
+                        t.nextElementSibling.classList.add('hidden');
+                        t.querySelector('i').style.transform = 'rotate(0deg)';
+                    });
+                    if (!isOpen) {
+                        body.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

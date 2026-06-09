@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        accentLight: '#818CF8',
+                        accentSoft: '#EEF2FF',
+                        surface: '#F8FAFC',
+                        muted: '#64748B',
+                        border: '#E2E8F0',
+                        card: '#FFFFFF',
+                        highlight: '#F1F5F9',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-surface text-primary antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div id="logo" class="flex items-center gap-2">
+                    <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                    <span class="font-bold text-primary text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                    <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                </div>
+                <nav id="main-nav" class="hidden md:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Home</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-muted hover:text-primary hover:bg-highlight transition-all duration-200">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
+            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Home</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="ml-auto bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-all duration-200">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="pt-16 min-h-[700px] flex items-center relative overflow-hidden bg-white">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-50 to-indigo-50 rounded-full opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+            <div class="absolute top-1/2 left-1/2 w-px h-40 bg-gradient-to-b from-transparent via-indigo-200 to-transparent opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div id="hero-content" class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-accentSoft text-accent px-3 py-1.5 rounded-full text-xs font-semibold mb-6 border border-indigo-100">
+                        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                        Available for opportunities
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight mb-4">
+                        Hi, I'm <span class="text-accent">Mifzal Fawwaz</span>
+                    </h1>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="font-mono text-lg text-muted">$ </span>
+                        <span id="typewriter" class="font-mono text-lg font-semibold text-primary"></span>
+                        <span class="font-mono text-accent animate-blink">|</span>
+                    </div>
+                    <p class="text-muted text-lg leading-relaxed mb-8 max-w-xl">
+                        A passionate software development student building entrepreneurial projects, documenting my journey, and crafting digital experiences that solve real-world problems.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <a href="#" class="bg-accent text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all duration-200 flex items-center gap-2 shadow-lg shadow-indigo-200">
+                            <i class="fa-solid fa-rocket"></i> View Projects
+                        </a>
+                        <a href="#" class="bg-white text-primary border border-border px-6 py-3 rounded-xl font-semibold text-sm hover:bg-highlight hover:border-indigo-200 transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-file-lines text-accent"></i> Download CV
+                        </a>
+                        <a href="#" class="bg-white text-primary border border-border px-6 py-3 rounded-xl font-semibold text-sm hover:bg-highlight hover:border-indigo-200 transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-regular fa-envelope text-accent"></i> Contact Me
+                        </a>
+                    </div>
+                    <div id="hero-stats" class="flex flex-wrap gap-6">
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-primary">12+</p>
+                            <p class="text-xs text-muted font-medium">Projects Built</p>
+                        </div>
+                        <div class="w-px bg-border"></div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-primary">8</p>
+                            <p class="text-xs text-muted font-medium">Blog Posts</p>
+                        </div>
+                        <div class="w-px bg-border"></div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-primary">3</p>
+                            <p class="text-xs text-muted font-medium">Years Learning</p>
+                        </div>
+                        <div class="w-px bg-border"></div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-primary">5★</p>
+                            <p class="text-xs text-muted font-medium">GitHub Repos</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="hero-visual" class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100">
+                            <img src="images/fawwaz.jpg" alt="Mifzal Fawwaz" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center">
+                                <i class="fa-brands fa-github text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">GitHub</p>
+                                <p class="text-sm font-bold text-primary">@mifzalfawwaz</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-code text-green-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted">Status</p>
+                                <p class="text-sm font-bold text-green-600">Open to work</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 bg-accent text-white rounded-2xl shadow-lg px-4 py-3 -translate-y-1/2 hidden lg:block">
+                            <p class="text-xs font-medium opacity-80">Stack</p>
+                            <p class="text-sm font-bold">Full-Stack Dev</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="font-mono text-accent text-sm font-semibold">// skills & expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">What I Work With</h2>
+                <p class="text-muted mt-3 max-w-xl mx-auto">A curated set of technologies and tools I use to build modern, scalable, and impactful software.</p>
+            </div>
+            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-js text-yellow-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">JavaScript</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-yellow-400 h-1.5 rounded-full" style="width:85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-react text-blue-400 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">React</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-blue-400 h-1.5 rounded-full" style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-node-js text-green-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">Node.js</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-green-500 h-1.5 rounded-full" style="width:75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-python text-indigo-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">Python</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-indigo-500 h-1.5 rounded-full" style="width:70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-git-alt text-orange-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">Git</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-orange-500 h-1.5 rounded-full" style="width:90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card bg-white rounded-2xl p-5 flex flex-col items-center gap-3 border border-border hover:border-accent hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 group cursor-pointer">
+                    <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-brands fa-docker text-cyan-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-primary">Docker</span>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                        <div class="bg-cyan-500 h-1.5 rounded-full" style="width:60%"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="skills-tags" class="flex flex-wrap gap-2 justify-center">
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">TypeScript</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">MongoDB</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">PostgreSQL</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">Tailwind CSS</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">REST APIs</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">GraphQL</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">AWS</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">Figma</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">Agile/Scrum</span>
+                <span class="bg-white border border-border text-muted text-xs font-medium px-3 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all duration-200 cursor-pointer">CI/CD</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
+                <div>
+                    <span class="font-mono text-accent text-sm font-semibold">// featured projects</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Things I've Built</h2>
+                    <p class="text-muted mt-3 max-w-xl">Entrepreneurial projects and technical experiments documenting my growth as a developer.</p>
+                </div>
+                <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all duration-200 whitespace-nowrap">
+                    View all projects <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="project-card-1" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-indigo-50 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-indigo-50 to-purple-50 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
+                                <div class="bg-white rounded-2xl shadow-lg p-6 w-3/4">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="h-2 bg-indigo-100 rounded w-full"></div>
+                                        <div class="h-2 bg-indigo-100 rounded w-3/4"></div>
+                                        <div class="h-2 bg-purple-100 rounded w-5/6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">Featured</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-accentSoft text-accent text-xs font-semibold px-2 py-0.5 rounded-md">React</span>
+                            <span class="bg-accentSoft text-accent text-xs font-semibold px-2 py-0.5 rounded-md">Node.js</span>
+                            <span class="bg-accentSoft text-accent text-xs font-semibold px-2 py-0.5 rounded-md">MongoDB</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">TaskFlow — Project Manager</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-5">A full-stack project management app with real-time collaboration, task tracking, and team dashboards. Built to solve common student team coordination issues.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-3 text-muted text-sm">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-yellow-400"></i> 24</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-code-fork"></i> 8</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="#" class="text-muted hover:text-primary transition-colors duration-200 text-sm flex items-center gap-1 font-medium">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                                <span class="text-border">|</span>
+                                <a href="#" class="text-accent hover:text-indigo-700 transition-colors duration-200 text-sm flex items-center gap-1 font-semibold">
+                                    Live <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-card-2" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-indigo-50 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-green-50 to-teal-50 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full h-full bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center">
+                                <div class="bg-white rounded-2xl shadow-lg p-5 w-3/4">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                            <i class="fa-solid fa-leaf text-green-500 text-xs"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="h-2 bg-green-100 rounded w-full mb-1"></div>
+                                            <div class="h-1.5 bg-gray-100 rounded w-2/3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="h-12 bg-green-50 rounded-lg"></div>
+                                        <div class="h-12 bg-teal-50 rounded-lg"></div>
+                                        <div class="h-12 bg-emerald-50 rounded-lg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-green-50 text-green-600 text-xs font-semibold px-2 py-0.5 rounded-md">Python</span>
+                            <span class="bg-green-50 text-green-600 text-xs font-semibold px-2 py-0.5 rounded-md">Flask</span>
+                            <span class="bg-green-50 text-green-600 text-xs font-semibold px-2 py-0.5 rounded-md">SQLite</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">EcoTrack — Carbon Footprint App</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-5">A web app that helps users track and reduce their carbon footprint with personalized recommendations and progress visualizations.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-3 text-muted text-sm">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-yellow-400"></i> 17</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-code-fork"></i> 5</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="#" class="text-muted hover:text-primary transition-colors duration-200 text-sm flex items-center gap-1 font-medium">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                                <span class="text-border">|</span>
+                                <a href="#" class="text-accent hover:text-indigo-700 transition-colors duration-200 text-sm flex items-center gap-1 font-semibold">
+                                    Live <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-card-3" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-indigo-50 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-orange-50 to-pink-50 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full h-full bg-gradient-to-br from-orange-100 to-pink-100 flex items-center justify-center">
+                                <div class="bg-white rounded-2xl shadow-lg p-5 w-3/4">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                            <i class="fa-solid fa-store text-orange-500 text-xs"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="h-2 bg-orange-100 rounded w-full mb-1"></div>
+                                            <div class="h-1.5 bg-gray-100 rounded w-1/2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-8 h-8 bg-orange-50 rounded-lg"></div>
+                                            <div class="flex-1 h-2 bg-gray-100 rounded"></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-8 h-8 bg-pink-50 rounded-lg"></div>
+                                            <div class="flex-1 h-2 bg-gray-100 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2 py-0.5 rounded-md">Next.js</span>
+                            <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2 py-0.5 rounded-md">Stripe</span>
+                            <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2 py-0.5 rounded-md">PostgreSQL</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">ShopLocal — E-Commerce Platform</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-5">A marketplace connecting local businesses with customers in their community. Features payment integration and real-time inventory management.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-3 text-muted text-sm">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-yellow-400"></i> 31</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-code-fork"></i> 12</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="#" class="text-muted hover:text-primary transition-colors duration-200 text-sm flex items-center gap-1 font-medium">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                                <span class="text-border">|</span>
+                                <a href="#" class="text-accent hover:text-indigo-700 transition-colors duration-200 text-sm flex items-center gap-1 font-semibold">
+                                    Live <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog-preview" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
+                <div>
+                    <span class="font-mono text-accent text-sm font-semibold">// latest posts</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">From the Blog</h2>
+                    <p class="text-muted mt-3 max-w-xl">Thoughts on software development, entrepreneurship, and lessons learned building real projects.</p>
+                </div>
+                <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all duration-200 whitespace-nowrap">
+                    Read all posts <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div id="blog-card-1" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
+                    <div class="h-44 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/cc59265fc2-ec3898461ce444f51b4a.png" alt="software development coding dark theme laptop screen blog header image minimal" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">Entrepreneurship</span>
+                            <span class="text-muted text-xs">Jun 2, 2025</span>
+                        </div>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug">How I Built My First SaaS as a Student Developer</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">Documenting the journey from idea to launch — the challenges, pivots, and lessons learned building a real product while studying full-time.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-2">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <span class="text-xs font-medium text-muted">Mifzal Fawwaz</span>
+                            </div>
+                            <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="blog-card-2" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
+                    <div class="h-44 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ce5f5d8d02-b09c3abca65d404cbaf0.png" alt="responsive web design mobile desktop code HTML CSS blog header minimal clean" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">Web Dev</span>
+                            <span class="text-muted text-xs">May 18, 2025</span>
+                        </div>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug">Mastering Responsive Design: A Practical Guide</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">Breaking down the core principles of responsive design and how to implement them effectively using modern CSS and Tailwind.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-2">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <span class="text-xs font-medium text-muted">Mifzal Fawwaz</span>
+                            </div>
+                            <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="blog-card-3" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
+                    <div class="h-44 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e970ede159-50ec85f421383aadd733.png" alt="github portfolio open source developer tools programming blog header image clean modern" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">Portfolio</span>
+                            <span class="text-muted text-xs">May 5, 2025</span>
+                        </div>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug">Building a GitHub Portfolio That Gets You Noticed</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">A step-by-step breakdown of how to structure your GitHub profile and README files to impress recruiters and collaborators.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-border">
+                            <div class="flex items-center gap-2">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <span class="text-xs font-medium text-muted">Mifzal Fawwaz</span>
+                            </div>
+                            <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 4 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-10 sm:p-16 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-accent opacity-10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-60 h-60 bg-indigo-400 opacity-10 rounded-full -translate-x-1/4 translate-y-1/4"></div>
+                    <div class="absolute top-1/2 left-1/2 w-px h-32 bg-white opacity-5 -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+                <div class="relative z-10 text-center max-w-3xl mx-auto">
+                    <span class="font-mono text-indigo-300 text-sm font-semibold">// let's connect</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 mb-5">Let's Build Something <span class="text-accentLight">Amazing</span> Together</h2>
+                    <p class="text-indigo-200 text-lg mb-10 leading-relaxed">Whether you have a project idea, want to collaborate, or just want to chat about tech and entrepreneurship — my inbox is always open.</p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="#" class="bg-white text-primary px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2 shadow-lg">
+                            <i class="fa-regular fa-envelope text-accent"></i> Get In Touch
+                        </a>
+                        <a href="#" class="bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2 backdrop-blur-sm">
+                            <i class="fa-brands fa-github"></i> View GitHub
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-10 pt-8 border-t border-white/10">
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-brands fa-dev"></i> Dev.to
+                        </a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-200 flex items-center gap-2 text-sm font-medium">
+                            <i class="fa-regular fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div id="footer-brand" class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-mono text-accent font-semibold text-lg">&lt;</span>
+                        <span class="font-bold text-white text-lg tracking-tight">Tuan Mifzal Fawwaz bin Tuan Fauzi</span>
+                        <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-5">A software development student passionate about building entrepreneurial projects and sharing knowledge through writing.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent transition-all duration-200"><i class="fa-brands fa-dev text-sm"></i></a>
+                    </div>
+                </div>
+                <div id="footer-nav">
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="footer-projects">
+                    <h4 class="text-white font-semibold text-sm mb-4">Projects</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">TaskFlow</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">EcoTrack</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">ShopLocal</a></li>
+                        <li><a href="#" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">View All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-slate-500 text-sm">© 2025 Mifzal Fawwaz. Built with passion and lots of coffee.</p>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-accent text-xs"></i>
+                    <span>for learning</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-xmark');
+                    }
+                });
+            }
+
+            const typewriterEl = document.getElementById('typewriter');
+            const phrases = [
+                'Full-Stack Developer',
+                'Entrepreneurial Thinker',
+                'Open Source Contributor',
+                'Problem Solver'
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typewriterTimeout;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                if (!isDeleting) {
+                    typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                    if (charIndex === currentPhrase.length) {
+                        isDeleting = true;
+                        typewriterTimeout = setTimeout(type, 1800);
+                        return;
+                    }
+                } else {
+                    typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                    }
+                }
+                typewriterTimeout = setTimeout(type, isDeleting ? 60 : 90);
+            }
+
+            type();
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
