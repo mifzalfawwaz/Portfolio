@@ -117,7 +117,7 @@
                     <span class="text-accent">&amp; Pricing System with Machine Learning</span>
                 </h1>
                 <p class="text-muted text-lg leading-relaxed mb-6 max-w-2xl">
-                    A walkthrough of my Final Year Project at UniSZA: the problem it solves, how the hybrid recommender and Random Forest price model fit together, and what I learned building it.
+                    A walkthrough of my Final Year Project at UniSZA: the problem it solves, how collaborative filtering recommendations and a Random Forest price model fit together, and how I tested it.
                 </p>
                 <div class="flex flex-wrap items-center gap-5 mb-6">
                     <div class="flex items-center gap-3">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MachineLearning</span>
-                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#PHP</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#Laravel</span>
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MySQL</span>
                     <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Python</span>
                     <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#FYP</span>
@@ -180,7 +180,7 @@
                                     </div>
                                     <div>
                                         <p class="text-sm font-semibold text-primary mb-1">TL;DR</p>
-                                        <p class="text-sm text-muted leading-relaxed">For my Final Year Project I built a web-based system that recommends suitable cars to buyers and estimates a fair market price. It combines a hybrid recommender (content-based + collaborative filtering) with a Random Forest price prediction model, wrapped in a PHP and MySQL web application with modules for buyers, sellers and administrators.</p>
+                                        <p class="text-sm text-muted leading-relaxed">For my Final Year Project I built a web-based system that recommends suitable cars to buyers and estimates a fair market price. It uses collaborative filtering for personalised recommendations and Random Forest regression for price prediction, in a Laravel and MySQL web application with modules for buyers, sellers and administrators.</p>
                                     </div>
                                 </div>
                             </div>
@@ -207,13 +207,13 @@
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">01</span>
                                 The Problem I Wanted to Solve
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-4">The system was designed around three groups of users, each with a different need:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">Online car marketplaces now list thousands of vehicles, but most of them still rely on static search filters and manual browsing. They do not take into account what a buyer prefers, what they have browsed before, or how they have interacted with listings. On the selling side, prices are usually set by the seller's own judgement rather than data, which leads to inconsistent pricing and lower buyer confidence.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">My system was designed around three user modules:</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Buyers</strong> want to find cars that match their preferences and budget without browsing endless listings.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Sellers</strong> want a reasonable price estimate before listing their vehicle.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Administrators</strong> need to manage users, listings and transactions in one place.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Buyers</strong> browse cars, view details, save cars, set preferences and receive personalised recommendations and predicted prices.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Sellers</strong> add, edit and manage listings, compare their car against the market and request a predicted selling price.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Administrators</strong> manage user accounts, moderate listings and view platform reports.</span></li>
                             </ul>
-                            <p class="text-base text-muted leading-relaxed">The goal was to support better decisions on both sides of a car sale through data-driven recommendations and automated price predictions.</p>
                         </div>
 
                         <div id="article-section-2" class="mb-10">
@@ -221,54 +221,43 @@
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">02</span>
                                 System Architecture
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">The system has two main parts: a PHP web application that users interact with, and a Python layer that runs the machine learning models. MySQL stores everything in between.</p>
-                            <div id="architecture-diagram" class="bg-primary rounded-2xl p-6 mb-6">
+                            <p class="text-base text-muted leading-relaxed mb-5">The system is a web application built with <strong>Laravel (PHP)</strong> and a Bootstrap front end, backed by a <strong>MySQL</strong> database. The machine learning models are developed in <strong>Python</strong> with <strong>scikit-learn</strong>.</p>
+                            <div class="bg-primary rounded-2xl p-6 mb-6">
                                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-php text-indigo-300 text-lg"></i><span class="text-white text-sm font-bold">Web Application</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>PHP</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Buyer, seller &amp; admin modules</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>HTML, CSS &amp; JavaScript</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-laravel text-accent text-lg"></i><span class="text-white text-sm font-bold">Web Application</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Laravel (PHP) &amp; Bootstrap</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Buyer, seller &amp; admin modules</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Authentication &amp; role-based access</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
                                         <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-python text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Machine Learning</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Python</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Hybrid recommender</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Random Forest price model</li>
-                                        </ul>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Python &amp; scikit-learn</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Collaborative filtering</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Random Forest regression</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
                                         <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-database text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Data</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MySQL</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Users &amp; vehicle listings</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Transaction records</li>
-                                        </ul>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MySQL</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Users, listings &amp; preferences</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Browsing history &amp; saved cars</li></ul>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed">I followed the <strong>Waterfall SDLC</strong> for this project: requirements, design, implementation, testing and documentation in sequence. With a fixed academic timeline and clearly defined deliverables for each FYP stage, Waterfall made it easier to plan and report progress.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">At the centre of the system is a processing layer that validates data, generates recommendations and produces price predictions, while the database stores user information, vehicle data and pricing data. I followed the <strong>Waterfall</strong> model for this project, moving through requirements, design, implementation, testing and documentation in sequence, which suited the fixed stages of the FYP timeline.</p>
                         </div>
 
                         <div id="article-section-3" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">03</span>
-                                The Hybrid Recommender
+                                Personalised Recommendations with Collaborative Filtering
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-5">Recommendation systems usually follow one of two approaches, and each has a weakness on its own:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">To recommend cars, the system uses <strong>collaborative filtering</strong>. Instead of only matching a car's attributes, it looks at how users interact with listings: their browsing history, saved cars and stated preferences. Cars that similar users have shown interest in are suggested to the buyer.</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Content-based filtering</strong> recommends cars similar to what a user is looking for, based on attributes like brand, body type, price range and fuel type. It works even for new users, but tends to suggest very similar options.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Collaborative filtering</strong> recommends cars that users with similar behaviour liked. It can surface less obvious choices, but struggles when there is little interaction data (the "cold start" problem).</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">A buyer's <strong>browsing history</strong> and <strong>saved cars</strong> are recorded as interaction data.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">Their <strong>car preferences</strong> help shape what is shown.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">The recommendation module ranks cars and presents personalised suggestions on the buyer dashboard.</span></li>
                             </ul>
                             <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
                                 <div class="flex items-start gap-3">
                                     <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i></div>
                                     <div>
-                                        <p class="text-sm font-semibold text-orange-800 mb-1">Why hybrid?</p>
-                                        <p class="text-sm text-orange-700 leading-relaxed">Combining both approaches lets each one cover the other's weakness. Content-based filtering gives reasonable suggestions from the start, while collaborative filtering adds variety as more users interact with the system.</p>
+                                        <p class="text-sm font-semibold text-orange-800 mb-1">The cold start problem</p>
+                                        <p class="text-sm text-orange-700 leading-relaxed">Collaborative filtering depends on interaction data, so newly registered users with little or no browsing history may receive less accurate recommendations. In my future work I propose a hybrid approach that adds content-based filtering to handle new users better.</p>
                                     </div>
                                 </div>
                             </div>
@@ -279,38 +268,40 @@
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">04</span>
                                 Predicting Prices with Random Forest
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">For pricing, I used a <strong>Random Forest</strong> regression model. A Random Forest trains many decision trees on different samples of the data and averages their predictions. This makes it more stable than a single tree and good at capturing non-linear relationships, such as how a car's value drops with age and mileage at different rates for different brands. Here is a simplified example of the idea:</p>
-                            <div id="code-snippet-1" class="bg-primary rounded-2xl overflow-hidden mb-6">
+                            <p class="text-base text-muted leading-relaxed mb-5">For pricing, I used <strong>Random Forest regression</strong>. A Random Forest trains many decision trees on different samples of the data and averages their predictions, which makes it more stable than a single tree and good at capturing non-linear relationships. In my literature review, Random Forest consistently performed well for car price prediction, which supported this choice.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">The model predicts a fair market price from vehicle attributes such as <strong>brand, model, manufacturing year, mileage, engine type and vehicle condition</strong>. Here is a simplified example of the approach:</p>
+                            <div class="bg-primary rounded-2xl overflow-hidden mb-6">
                                 <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
                                     <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">price_model.py (simplified)</span></div>
                                 </div>
                                 <div class="p-5 overflow-x-auto">
-                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-purple-300">from</span> <span class="text-white">sklearn.ensemble</span> <span class="text-purple-300">import</span> <span class="text-white">RandomForestRegressor</span>
-<span class="text-purple-300">from</span> <span class="text-white">sklearn.model_selection</span> <span class="text-purple-300">import</span> <span class="text-white">train_test_split</span>
+                                    <pre class="font-mono text-sm leading-relaxed text-indigo-100"><code>from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
 
-<span class="text-indigo-300"># X: car features (e.g. brand, year, mileage, engine size)</span>
-<span class="text-indigo-300"># y: selling price</span>
-<span class="text-white">X_train, X_test, y_train, y_test = </span><span class="text-yellow-300">train_test_split</span><span class="text-white">(X, y, test_size=</span><span class="text-orange-300">0.2</span><span class="text-white">)</span>
+# X: brand, model, year, mileage, engine type, condition (encoded)
+# y: selling price
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-<span class="text-white">model = </span><span class="text-yellow-300">RandomForestRegressor</span><span class="text-white">(n_estimators=</span><span class="text-orange-300">100</span><span class="text-white">)</span>
-<span class="text-white">model.</span><span class="text-yellow-300">fit</span><span class="text-white">(X_train, y_train)</span>
+model = RandomForestRegressor(n_estimators=100)
+model.fit(X_train, y_train)
 
-<span class="text-white">estimated_price = model.</span><span class="text-yellow-300">predict</span><span class="text-white">(new_car_features)</span></code></pre>
+predicted_price = model.predict(new_car_features)</code></pre>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed">In the web application, sellers enter their car's details and receive an estimated fair price, while buyers can compare a listing's asking price against the model's estimate.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">Sellers use the <strong>Price Prediction</strong> page to get a suggested selling price, and the <strong>Market Comparison</strong> page to see how their car compares with similar listings. Buyers can see the predicted price on a car's details page and judge whether the asking price is reasonable.</p>
                         </div>
 
                         <div id="article-section-5" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">05</span>
-                                Key Lessons &amp; Takeaways
+                                Testing, Limitations &amp; Future Work
                             </h2>
+                            <p class="text-base text-muted leading-relaxed mb-5">I tested the system with both <strong>black-box testing</strong>, checking each module's features against expected results through documented test cases, and <strong>white-box testing</strong>, reviewing controllers, models, routes and middleware to confirm that validation and role-based authorisation worked correctly.</p>
                             <div class="space-y-4">
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-database text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Data quality matters more than the algorithm</h4><p class="text-sm text-muted leading-relaxed">Cleaning and preparing the data took a large share of the effort. A good model cannot make up for messy or inconsistent input.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plug text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Integration is its own challenge</h4><p class="text-sm text-muted leading-relaxed">Connecting a PHP web application to Python models taught me a lot about passing data between components cleanly.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-list-check text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Plan the documentation alongside the code</h4><p class="text-sm text-muted leading-relaxed">An FYP is judged on the report as well as the system. Writing chapters as I built each part kept the two consistent.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-users text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Design for every type of user</h4><p class="text-sm text-muted leading-relaxed">Building separate modules for buyers, sellers and administrators forced me to think through each user's workflow and permissions carefully.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-user-plus text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Cold start for new users</h4><p class="text-sm text-muted leading-relaxed">Recommendations are less accurate for users with little interaction history, a known limitation of collaborative filtering.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-chart-line text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Market factors are not fully captured</h4><p class="text-sm text-muted leading-relaxed">Predictions rely on historical vehicle attributes, so sudden market changes, demand and economic conditions are not fully considered.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-server text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Tested in a controlled environment</h4><p class="text-sm text-muted leading-relaxed">Performance with thousands of concurrent users has not been extensively tested yet.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-rocket text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Next steps</h4><p class="text-sm text-muted leading-relaxed">A hybrid recommender, real-time market data, a mobile app and features such as booking, payments and seller verification.</p></div></div>
                             </div>
                         </div>
 
@@ -331,8 +322,8 @@
                                 <span class="text-xs font-semibold text-muted mr-1">Tags:</span>
                                 <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#MachineLearning</span>
                                 <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RandomForest</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RecommenderSystem</span>
-                                <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full">#PHP</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#CollaborativeFiltering</span>
+                                <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full">#Laravel</span>
                                 <span class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full">#MySQL</span>
                                 <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full">#FYP</span>
                             </div>
@@ -371,9 +362,9 @@
                         <nav class="space-y-1">
                             <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> The Problem I Wanted to Solve</a>
                             <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">02</span> System Architecture</a>
-                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> The Hybrid Recommender</a>
+                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> Personalised Recommendations with Collaborative Filtering</a>
                             <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Predicting Prices with Random Forest</a>
-                            <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">05</span> Key Lessons &amp; Takeaways</a>
+                            <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">05</span> Testing, Limitations &amp; Future Work</a>
                         </nav>
                         <div class="mt-5 pt-4 border-t border-border">
                             <div class="flex items-center justify-between text-xs text-muted mb-2"><span>Reading progress</span><span id="progress-pct">0%</span></div>
