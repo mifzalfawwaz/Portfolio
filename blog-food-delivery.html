@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Recommendation &amp; Pricing System with ML | Tuan Mifzal Fawwaz</title>
+    <title>Building a Food Delivery System with REST APIs | Tuan Mifzal Fawwaz</title>
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <link rel="shortcut icon" href="favicon.ico?v=2">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -101,23 +101,20 @@
                 <i class="fa-solid fa-chevron-right text-xs text-border"></i>
                 <a href="blog.html" class="hover:text-accent transition-colors duration-200">Blog</a>
                 <i class="fa-solid fa-chevron-right text-xs text-border"></i>
-                <span class="text-primary font-medium truncate max-w-xs">Building a Car Recommendation &amp; Pricing System with Machine Learning</span>
+                <span class="text-primary font-medium truncate max-w-xs">Building a Food Delivery System with REST APIs</span>
             </div>
             <div class="max-w-3xl">
                 <div class="flex flex-wrap items-center gap-2 mb-5">
-                    <span class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
-                        <i class="fa-solid fa-star text-xs"></i> Featured
-                    </span>
                     <span class="inline-flex items-center gap-1.5 bg-accentSoft text-accent text-xs font-semibold px-3 py-1 rounded-full border border-indigo-100">
                         <i class="fa-solid fa-file-code text-xs"></i> Project Docs
                     </span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary leading-tight mb-5">
-                    How I Built a Car Recommendation<br class="hidden sm:block">
-                    <span class="text-accent">&amp; Pricing System with Machine Learning</span>
+                    Building a Food Delivery System<br class="hidden sm:block">
+                    <span class="text-accent">with REST APIs &amp; SOA</span>
                 </h1>
                 <p class="text-muted text-lg leading-relaxed mb-6 max-w-2xl">
-                    A walkthrough of my Final Year Project at UniSZA: the problem it solves, how the hybrid recommender and Random Forest price model fit together, and what I learned building it.
+                    How I applied Service-Oriented Architecture in a course project: splitting a food delivery platform into services and connecting customers, restaurants and riders through RESTful APIs.
                 </p>
                 <div class="flex flex-wrap items-center gap-5 mb-6">
                     <div class="flex items-center gap-3">
@@ -134,11 +131,11 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MachineLearning</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#SOA</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#RESTAPI</span>
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#PHP</span>
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MySQL</span>
-                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Python</span>
-                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#FYP</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#Bootstrap</span>
                 </div>
             </div>
         </div>
@@ -146,16 +143,16 @@
 
     <section id="post-cover" class="bg-white pb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 flex items-center justify-center">
+            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl bg-gradient-to-br from-orange-100 via-amber-50 to-rose-100 flex items-center justify-center">
                 <div class="text-center px-6">
                     <div class="flex items-center justify-center gap-6 mb-6 text-accent">
-                        <i class="fa-solid fa-car-side text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-user text-5xl sm:text-6xl"></i>
                         <i class="fa-solid fa-arrow-right text-2xl text-muted"></i>
-                        <i class="fa-solid fa-brain text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-store text-5xl sm:text-6xl"></i>
                         <i class="fa-solid fa-arrow-right text-2xl text-muted"></i>
-                        <i class="fa-solid fa-tags text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-motorcycle text-5xl sm:text-6xl"></i>
                     </div>
-                    <p class="font-mono text-sm text-muted">recommend(user) + predict_price(car)</p>
+                    <p class="font-mono text-sm text-muted">GET /orders · POST /orders · PUT /orders/{id}/status</p>
                 </div>
             </div>
         </div>
@@ -180,30 +177,26 @@
                                     </div>
                                     <div>
                                         <p class="text-sm font-semibold text-primary mb-1">TL;DR</p>
-                                        <p class="text-sm text-muted leading-relaxed">For my Final Year Project I built a web-based system that recommends suitable cars to buyers and estimates a fair market price. It combines a hybrid recommender (content-based + collaborative filtering) with a Random Forest price prediction model, wrapped in a PHP and MySQL web application with modules for buyers, sellers and administrators.</p>
+                                        <p class="text-sm text-muted leading-relaxed">For my Service-Oriented Architecture course, I built a food delivery platform where customers, restaurants and delivery personnel each have their own module. Instead of one tightly coupled application, the modules communicate through RESTful APIs built with PHP and MySQL, with a responsive Bootstrap front end.</p>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed mb-5">
-                                Buying a car, new or used, is one of the biggest purchases most people make. Yet the process is often confusing: there are hundreds of models to compare, and it is hard to know whether a listed price is actually fair. Sellers face the opposite problem, struggling to decide what price to ask.
-                            </p>
-                            <p class="text-base text-muted leading-relaxed">
-                                I wanted my Final Year Project to tackle both sides of that problem with data. The result is the <strong>Intelligent Car Recommendation and Pricing System Using Machine Learning</strong>. In this post I'll walk through how it works and what I learned along the way.
-                            </p>
+                            <p class="text-base text-muted leading-relaxed mb-5">Food delivery is a good example of a system with many moving parts. A single order involves a customer placing it, a restaurant preparing it and a rider delivering it, and each of them needs up-to-date information at every step.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">This made it a natural fit for my Service-Oriented Architecture (SOA) course project. In this post I explain the architecture, how the three user modules talk to each other, and what I learned about designing APIs.</p>
                         </div>
 
                         <div id="article-section-1" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">01</span>
-                                The Problem I Wanted to Solve
+                                What Is Service-Oriented Architecture?
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-4">The system was designed around three groups of users, each with a different need:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">In a traditional monolithic application, every feature lives in one codebase and shares everything directly. SOA takes a different approach: the system is split into <strong>services</strong>, each responsible for one part of the business, and services communicate through well-defined interfaces.</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Buyers</strong> want to find cars that match their preferences and budget without browsing endless listings.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Sellers</strong> want a reasonable price estimate before listing their vehicle.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Administrators</strong> need to manage users, listings and transactions in one place.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Loose coupling:</strong> a service can change internally without breaking the others, as long as its interface stays the same.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Reusability:</strong> the same service (for example, order management) can be used by the customer, restaurant and rider interfaces.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Clear responsibilities:</strong> each service has one job, which makes the system easier to understand and test.</span></li>
                             </ul>
-                            <p class="text-base text-muted leading-relaxed">The goal was to support better decisions on both sides of a car sale through data-driven recommendations and automated price predictions.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">In this project, those interfaces are <strong>RESTful web services</strong>: standard HTTP requests (GET, POST, PUT, DELETE) that exchange data in JSON.</p>
                         </div>
 
                         <div id="article-section-2" class="mb-10">
@@ -211,55 +204,62 @@
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">02</span>
                                 System Architecture
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">The system has two main parts: a PHP web application that users interact with, and a Python layer that runs the machine learning models. MySQL stores everything in between.</p>
-                            <div id="architecture-diagram" class="bg-primary rounded-2xl p-6 mb-6">
+                            <p class="text-base text-muted leading-relaxed mb-5">The platform is organised around three user modules that share a common set of services and a MySQL database:</p>
+                            <div class="bg-primary rounded-2xl p-6 mb-6">
                                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-php text-indigo-300 text-lg"></i><span class="text-white text-sm font-bold">Web Application</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>PHP</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Buyer, seller &amp; admin modules</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>HTML, CSS &amp; JavaScript</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-user text-accent text-lg"></i><span class="text-white text-sm font-bold">Customer</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Browse restaurants &amp; menus</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Place orders</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Track order status</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-python text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Machine Learning</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Python</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Hybrid recommender</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Random Forest price model</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-store text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Restaurant</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Manage menu items</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Accept &amp; prepare orders</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Update order status</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-database text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Data</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MySQL</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Users &amp; vehicle listings</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Transaction records</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-motorcycle text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Delivery</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>View assigned orders</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Pick up &amp; deliver</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Mark as delivered</li></ul>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed">I followed the <strong>Waterfall SDLC</strong> for this project: requirements, design, implementation, testing and documentation in sequence. With a fixed academic timeline and clearly defined deliverables for each FYP stage, Waterfall made it easier to plan and report progress.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">All three modules use the same REST API to read and update data, so there is a single source of truth for every order. The front end is built with HTML, CSS and Bootstrap, and the whole system was developed and tested locally with XAMPP.</p>
                         </div>
 
                         <div id="article-section-3" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">03</span>
-                                The Hybrid Recommender
+                                How the Modules Communicate
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-5">Recommendation systems usually follow one of two approaches, and each has a weakness on its own:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">The heart of the system is the order lifecycle. Each step is triggered by one module and becomes visible to the others through the API:</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Content-based filtering</strong> recommends cars similar to what a user is looking for, based on attributes like brand, body type, price range and fuel type. It works even for new users, but tends to suggest very similar options.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Collaborative filtering</strong> recommends cars that users with similar behaviour liked. It can surface less obvious choices, but struggles when there is little interaction data (the "cold start" problem).</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>1. Customer places an order:</strong> the customer interface sends a POST request to create the order.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>2. Restaurant accepts it:</strong> the restaurant interface retrieves new orders and updates the status as it prepares the food.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>3. Rider picks it up:</strong> the delivery interface sees orders that are ready and updates the status during delivery.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>4. Customer tracks it:</strong> the customer interface reads the latest status at each stage.</span></li>
                             </ul>
-                            <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i></div>
-                                    <div>
-                                        <p class="text-sm font-semibold text-orange-800 mb-1">Why hybrid?</p>
-                                        <p class="text-sm text-orange-700 leading-relaxed">Combining both approaches lets each one cover the other's weakness. Content-based filtering gives reasonable suggestions from the start, while collaborative filtering adds variety as more users interact with the system.</p>
-                                    </div>
+                            <p class="text-base text-muted leading-relaxed mb-5">Here is a simplified example of what an endpoint for updating an order's status can look like in PHP:</p>
+                            <div class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">update_order_status.php (simplified)</span></div>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed text-indigo-100"><code>&lt;?php
+header(&#x27;Content-Type: application/json&#x27;);
+require &#x27;db.php&#x27;;
+
+$data = json_decode(file_get_contents(&#x27;php://input&#x27;), true);
+$allowed = [&#x27;accepted&#x27;, &#x27;preparing&#x27;, &#x27;ready&#x27;, &#x27;on_the_way&#x27;, &#x27;delivered&#x27;];
+
+if (!in_array($data[&#x27;status&#x27;], $allowed)) {
+    http_response_code(400);
+    echo json_encode([&#x27;error&#x27; =&gt; &#x27;Invalid status&#x27;]);
+    exit;
+}
+
+$stmt = $conn-&gt;prepare(&#x27;UPDATE orders SET status = ? WHERE order_id = ?&#x27;);
+$stmt-&gt;bind_param(&#x27;si&#x27;, $data[&#x27;status&#x27;], $data[&#x27;order_id&#x27;]);
+$stmt-&gt;execute();
+
+echo json_encode([&#x27;success&#x27; =&gt; true]);</code></pre>
                                 </div>
                             </div>
                         </div>
@@ -267,28 +267,24 @@
                         <div id="article-section-4" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">04</span>
-                                Predicting Prices with Random Forest
+                                Designing the API
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">For pricing, I used a <strong>Random Forest</strong> regression model. A Random Forest trains many decision trees on different samples of the data and averages their predictions. This makes it more stable than a single tree and good at capturing non-linear relationships, such as how a car's value drops with age and mileage at different rates for different brands. Here is a simplified example of the idea:</p>
-                            <div id="code-snippet-1" class="bg-primary rounded-2xl overflow-hidden mb-6">
-                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
-                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">price_model.py (simplified)</span></div>
-                                </div>
-                                <div class="p-5 overflow-x-auto">
-                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-purple-300">from</span> <span class="text-white">sklearn.ensemble</span> <span class="text-purple-300">import</span> <span class="text-white">RandomForestRegressor</span>
-<span class="text-purple-300">from</span> <span class="text-white">sklearn.model_selection</span> <span class="text-purple-300">import</span> <span class="text-white">train_test_split</span>
-
-<span class="text-indigo-300"># X: car features (e.g. brand, year, mileage, engine size)</span>
-<span class="text-indigo-300"># y: selling price</span>
-<span class="text-white">X_train, X_test, y_train, y_test = </span><span class="text-yellow-300">train_test_split</span><span class="text-white">(X, y, test_size=</span><span class="text-orange-300">0.2</span><span class="text-white">)</span>
-
-<span class="text-white">model = </span><span class="text-yellow-300">RandomForestRegressor</span><span class="text-white">(n_estimators=</span><span class="text-orange-300">100</span><span class="text-white">)</span>
-<span class="text-white">model.</span><span class="text-yellow-300">fit</span><span class="text-white">(X_train, y_train)</span>
-
-<span class="text-white">estimated_price = model.</span><span class="text-yellow-300">predict</span><span class="text-white">(new_car_features)</span></code></pre>
+                            <p class="text-base text-muted leading-relaxed mb-5">Building the APIs taught me that the interface matters as much as the code behind it. A few principles guided my design:</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Resource-based endpoints:</strong> URLs describe things (orders, menus, restaurants) and HTTP methods describe actions.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Consistent JSON responses:</strong> every response follows the same structure, so the front end handles success and errors the same way.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Meaningful status codes:</strong> 200 for success, 400 for invalid input, 404 when something is not found.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Validation on the server:</strong> the API checks every input instead of trusting the front end.</span></li>
+                            </ul>
+                            <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i></div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-orange-800 mb-1">Key insight</p>
+                                        <p class="text-sm text-orange-700 leading-relaxed">Once the API was defined, the three interfaces could be developed independently. As long as everyone followed the same request and response format, changes in one module did not break the others.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed">In the web application, sellers enter their car's details and receive an estimated fair price, while buyers can compare a listing's asking price against the model's estimate.</p>
                         </div>
 
                         <div id="article-section-5" class="mb-10">
@@ -297,10 +293,10 @@
                                 Key Lessons &amp; Takeaways
                             </h2>
                             <div class="space-y-4">
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-database text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Data quality matters more than the algorithm</h4><p class="text-sm text-muted leading-relaxed">Cleaning and preparing the data took a large share of the effort. A good model cannot make up for messy or inconsistent input.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plug text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Integration is its own challenge</h4><p class="text-sm text-muted leading-relaxed">Connecting a PHP web application to Python models taught me a lot about passing data between components cleanly.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-list-check text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Plan the documentation alongside the code</h4><p class="text-sm text-muted leading-relaxed">An FYP is judged on the report as well as the system. Writing chapters as I built each part kept the two consistent.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-users text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Design for every type of user</h4><p class="text-sm text-muted leading-relaxed">Building separate modules for buyers, sellers and administrators forced me to think through each user's workflow and permissions carefully.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-diagram-project text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Design the interface first</h4><p class="text-sm text-muted leading-relaxed">Agreeing on endpoints and data formats before writing code saved time and made integration much smoother.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-arrows-rotate text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Think in workflows, not pages</h4><p class="text-sm text-muted leading-relaxed">Mapping the full order lifecycle helped me see which module needed which data at each step.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-shield-halved text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Never trust the client</h4><p class="text-sm text-muted leading-relaxed">Validating input and using prepared statements on the server keeps the data consistent and safe.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-mobile-screen text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Responsive design matters</h4><p class="text-sm text-muted leading-relaxed">Riders and customers often use phones, so a responsive Bootstrap interface was essential.</p></div></div>
                             </div>
                         </div>
 
@@ -310,7 +306,7 @@
                                 <div class="relative z-10">
                                     <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-flag-checkered text-white text-lg"></i></div>
                                     <h3 class="text-xl font-extrabold text-white mb-3">What's Next?</h3>
-                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">I'm continuing to refine the system and plan to deploy a live demo. If you'd like to know more about the project or discuss an internship opportunity, feel free to reach out.</p>
+                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">This project changed how I think about building systems: as services with clear contracts instead of one big application. If you'd like to talk about it or an internship opportunity, feel free to reach out.</p>
                                     <a href="contact.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-500 transition-all duration-200"><i class="fa-regular fa-envelope"></i> Get In Touch</a>
                                 </div>
                             </div>
@@ -319,12 +315,11 @@
                         <div id="article-tags" class="pt-6 border-t border-border">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-xs font-semibold text-muted mr-1">Tags:</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#MachineLearning</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RandomForest</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RecommenderSystem</span>
-                                <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full">#PHP</span>
-                                <span class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full">#MySQL</span>
-                                <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full">#FYP</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#SOA</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RESTAPI</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#PHP</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#MySQL</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#Bootstrap</span>
                             </div>
                         </div>
                     </article>
@@ -359,10 +354,10 @@
                     <div id="sidebar-toc" class="bg-white rounded-2xl border border-border p-6 sticky top-20">
                         <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-accent"></i> Table of Contents</h3>
                         <nav class="space-y-1">
-                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> The Problem I Wanted to Solve</a>
+                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> What Is Service-Oriented Architecture?</a>
                             <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">02</span> System Architecture</a>
-                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> The Hybrid Recommender</a>
-                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Predicting Prices with Random Forest</a>
+                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> How the Modules Communicate</a>
+                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Designing the API</a>
                             <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">05</span> Key Lessons &amp; Takeaways</a>
                         </nav>
                         <div class="mt-5 pt-4 border-t border-border">

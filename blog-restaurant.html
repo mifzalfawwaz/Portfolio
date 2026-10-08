@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Recommendation &amp; Pricing System with ML | Tuan Mifzal Fawwaz</title>
+    <title>Restaurant Management System: Role-Based Access | Tuan Mifzal Fawwaz</title>
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <link rel="shortcut icon" href="favicon.ico?v=2">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -101,23 +101,20 @@
                 <i class="fa-solid fa-chevron-right text-xs text-border"></i>
                 <a href="blog.html" class="hover:text-accent transition-colors duration-200">Blog</a>
                 <i class="fa-solid fa-chevron-right text-xs text-border"></i>
-                <span class="text-primary font-medium truncate max-w-xs">Building a Car Recommendation &amp; Pricing System with Machine Learning</span>
+                <span class="text-primary font-medium truncate max-w-xs">Restaurant Management System: Role-Based Access</span>
             </div>
             <div class="max-w-3xl">
                 <div class="flex flex-wrap items-center gap-2 mb-5">
-                    <span class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
-                        <i class="fa-solid fa-star text-xs"></i> Featured
-                    </span>
                     <span class="inline-flex items-center gap-1.5 bg-accentSoft text-accent text-xs font-semibold px-3 py-1 rounded-full border border-indigo-100">
                         <i class="fa-solid fa-file-code text-xs"></i> Project Docs
                     </span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary leading-tight mb-5">
-                    How I Built a Car Recommendation<br class="hidden sm:block">
-                    <span class="text-accent">&amp; Pricing System with Machine Learning</span>
+                    Restaurant Management System:<br class="hidden sm:block">
+                    <span class="text-accent">Role-Based Access for Admin, Waiter &amp; Chef</span>
                 </h1>
                 <p class="text-muted text-lg leading-relaxed mb-6 max-w-2xl">
-                    A walkthrough of my Final Year Project at UniSZA: the problem it solves, how the hybrid recommender and Random Forest price model fit together, and what I learned building it.
+                    How I designed the database and role-based access for a web-based restaurant system, so administrators, waiters and chefs each see exactly what they need.
                 </p>
                 <div class="flex flex-wrap items-center gap-5 mb-6">
                     <div class="flex items-center gap-3">
@@ -134,11 +131,11 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MachineLearning</span>
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#PHP</span>
                     <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#MySQL</span>
-                    <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">#Python</span>
-                    <span class="bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full">#FYP</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#DatabaseDesign</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#RBAC</span>
+                    <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">#WebDev</span>
                 </div>
             </div>
         </div>
@@ -146,16 +143,16 @@
 
     <section id="post-cover" class="bg-white pb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 flex items-center justify-center">
+            <div class="h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-border shadow-xl bg-gradient-to-br from-emerald-100 via-teal-50 to-sky-100 flex items-center justify-center">
                 <div class="text-center px-6">
                     <div class="flex items-center justify-center gap-6 mb-6 text-accent">
-                        <i class="fa-solid fa-car-side text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-user-tie text-5xl sm:text-6xl"></i>
                         <i class="fa-solid fa-arrow-right text-2xl text-muted"></i>
-                        <i class="fa-solid fa-brain text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-bell-concierge text-5xl sm:text-6xl"></i>
                         <i class="fa-solid fa-arrow-right text-2xl text-muted"></i>
-                        <i class="fa-solid fa-tags text-5xl sm:text-6xl"></i>
+                        <i class="fa-solid fa-kitchen-set text-5xl sm:text-6xl"></i>
                     </div>
-                    <p class="font-mono text-sm text-muted">recommend(user) + predict_price(car)</p>
+                    <p class="font-mono text-sm text-muted">if ($_SESSION["role"] === "chef") { showKitchenDashboard(); }</p>
                 </div>
             </div>
         </div>
@@ -180,85 +177,93 @@
                                     </div>
                                     <div>
                                         <p class="text-sm font-semibold text-primary mb-1">TL;DR</p>
-                                        <p class="text-sm text-muted leading-relaxed">For my Final Year Project I built a web-based system that recommends suitable cars to buyers and estimates a fair market price. It combines a hybrid recommender (content-based + collaborative filtering) with a Random Forest price prediction model, wrapped in a PHP and MySQL web application with modules for buyers, sellers and administrators.</p>
+                                        <p class="text-sm text-muted leading-relaxed">For my Software Development Workshop, I built a web-based Restaurant Management System with PHP, MySQL, JavaScript and Bootstrap. It covers menu management, order processing, inventory tracking and payments, with dedicated dashboards for administrators, waiters and chefs controlled through role-based access.</p>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed mb-5">
-                                Buying a car, new or used, is one of the biggest purchases most people make. Yet the process is often confusing: there are hundreds of models to compare, and it is hard to know whether a listed price is actually fair. Sellers face the opposite problem, struggling to decide what price to ask.
-                            </p>
-                            <p class="text-base text-muted leading-relaxed">
-                                I wanted my Final Year Project to tackle both sides of that problem with data. The result is the <strong>Intelligent Car Recommendation and Pricing System Using Machine Learning</strong>. In this post I'll walk through how it works and what I learned along the way.
-                            </p>
+                            <p class="text-base text-muted leading-relaxed mb-5">Many small restaurants still rely on paper order slips and verbal communication between the floor and the kitchen. Orders get lost, inventory runs out unexpectedly, and it is hard to know what is happening at any moment.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">My goal for this project was to digitalise those daily operations. The most interesting challenge was not any single feature, but making sure each type of staff member could do their job without seeing or changing things they should not.</p>
                         </div>
 
                         <div id="article-section-1" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">01</span>
-                                The Problem I Wanted to Solve
+                                The Problem
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-4">The system was designed around three groups of users, each with a different need:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">A restaurant has several roles working on the same orders at the same time, each with different needs:</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Buyers</strong> want to find cars that match their preferences and budget without browsing endless listings.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Sellers</strong> want a reasonable price estimate before listing their vehicle.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Administrators</strong> need to manage users, listings and transactions in one place.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Waiters</strong> take orders from customers and need to send them to the kitchen quickly.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Chefs</strong> need a clear queue of what to cook and a way to mark dishes as ready.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Administrators</strong> manage the menu, inventory, staff accounts and payments.</span></li>
                             </ul>
-                            <p class="text-base text-muted leading-relaxed">The goal was to support better decisions on both sides of a car sale through data-driven recommendations and automated price predictions.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">If everyone uses the same screen with the same permissions, the system becomes cluttered and risky. A waiter should not be able to change menu prices, and a chef does not need to see payment records.</p>
                         </div>
 
                         <div id="article-section-2" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">02</span>
-                                System Architecture
+                                Designing the Database
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">The system has two main parts: a PHP web application that users interact with, and a Python layer that runs the machine learning models. MySQL stores everything in between.</p>
-                            <div id="architecture-diagram" class="bg-primary rounded-2xl p-6 mb-6">
+                            <p class="text-base text-muted leading-relaxed mb-5">I started with the relational database, because every feature depends on it. The main entities and how they relate:</p>
+                            <div class="bg-primary rounded-2xl p-6 mb-6">
                                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-php text-indigo-300 text-lg"></i><span class="text-white text-sm font-bold">Web Application</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>PHP</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>Buyer, seller &amp; admin modules</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>HTML, CSS &amp; JavaScript</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-users text-accent text-lg"></i><span class="text-white text-sm font-bold">People</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>users (with role)</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>staff details</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-accent"></i>login credentials</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-brands fa-python text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Machine Learning</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Python</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Hybrid recommender</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>Random Forest price model</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-utensils text-green-400 text-lg"></i><span class="text-white text-sm font-bold">Menu &amp; Stock</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>menu_items</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>categories</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-green-400"></i>inventory</li></ul>
                                     </div>
                                     <div class="bg-white/10 rounded-xl p-4 border border-white/10">
-                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-database text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Data</span></div>
-                                        <ul class="space-y-1.5">
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>MySQL</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Users &amp; vehicle listings</li>
-                                            <li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>Transaction records</li>
-                                        </ul>
+                                        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-receipt text-yellow-400 text-lg"></i><span class="text-white text-sm font-bold">Orders</span></div>
+                                        <ul class="space-y-1.5"><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>orders</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>order_items</li><li class="text-indigo-200 text-xs flex items-center gap-2"><i class="fa-solid fa-dot-circle text-xs text-yellow-400"></i>payments</li></ul>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-base text-muted leading-relaxed">I followed the <strong>Waterfall SDLC</strong> for this project: requirements, design, implementation, testing and documentation in sequence. With a fixed academic timeline and clearly defined deliverables for each FYP stage, Waterfall made it easier to plan and report progress.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">An <strong>order</strong> belongs to a table and is created by a waiter. Each order has many <strong>order items</strong>, each pointing to a <strong>menu item</strong>. A <strong>payment</strong> is linked to a completed order. Splitting orders and order items into separate tables keeps the design normalised and makes it easy to track the status of each dish.</p>
                         </div>
 
                         <div id="article-section-3" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">03</span>
-                                The Hybrid Recommender
+                                Implementing Role-Based Access
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-5">Recommendation systems usually follow one of two approaches, and each has a weakness on its own:</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">Every user account has a <strong>role</strong>: admin, waiter or chef. When a user logs in, the role is stored in the session and used in two ways:</p>
                             <ul class="space-y-3 mb-6">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Content-based filtering</strong> recommends cars similar to what a user is looking for, based on attributes like brand, body type, price range and fuel type. It works even for new users, but tends to suggest very similar options.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Collaborative filtering</strong> recommends cars that users with similar behaviour liked. It can surface less obvious choices, but struggles when there is little interaction data (the "cold start" problem).</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Routing:</strong> after login, each user is sent to their own dashboard.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed"><strong>Protection:</strong> every page checks the role before showing anything, so typing a URL directly does not bypass the rules.</span></li>
                             </ul>
+                            <p class="text-base text-muted leading-relaxed mb-5">A simplified version of the access check that runs at the top of each protected page:</p>
+                            <div class="bg-primary rounded-2xl overflow-hidden mb-6">
+                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">auth.php (simplified)</span></div>
+                                </div>
+                                <div class="p-5 overflow-x-auto">
+                                    <pre class="font-mono text-sm leading-relaxed text-indigo-100"><code>&lt;?php
+session_start();
+
+function requireRole(array $allowedRoles) {
+    if (!isset($_SESSION[&#x27;user_id&#x27;])) {
+        header(&#x27;Location: login.php&#x27;);
+        exit;
+    }
+    if (!in_array($_SESSION[&#x27;role&#x27;], $allowedRoles)) {
+        http_response_code(403);
+        exit(&#x27;Access denied&#x27;);
+    }
+}
+
+// Example: only admins can manage the menu
+requireRole([&#x27;admin&#x27;]);</code></pre>
+                                </div>
+                            </div>
                             <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-6">
                                 <div class="flex items-start gap-3">
                                     <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-lightbulb text-orange-500 text-sm"></i></div>
                                     <div>
-                                        <p class="text-sm font-semibold text-orange-800 mb-1">Why hybrid?</p>
-                                        <p class="text-sm text-orange-700 leading-relaxed">Combining both approaches lets each one cover the other's weakness. Content-based filtering gives reasonable suggestions from the start, while collaborative filtering adds variety as more users interact with the system.</p>
+                                        <p class="text-sm font-semibold text-orange-800 mb-1">Why check on every page?</p>
+                                        <p class="text-sm text-orange-700 leading-relaxed">Hiding a menu link is not security. Checking the role on the server for every request ensures users can only reach the pages and actions meant for them.</p>
                                     </div>
                                 </div>
                             </div>
@@ -267,28 +272,15 @@
                         <div id="article-section-4" class="mb-10">
                             <h2 class="text-2xl font-extrabold text-primary mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-accentSoft rounded-lg flex items-center justify-center text-accent font-mono text-sm font-bold flex-shrink-0">04</span>
-                                Predicting Prices with Random Forest
+                                Real-Time Order Tracking
                             </h2>
-                            <p class="text-base text-muted leading-relaxed mb-6">For pricing, I used a <strong>Random Forest</strong> regression model. A Random Forest trains many decision trees on different samples of the data and averages their predictions. This makes it more stable than a single tree and good at capturing non-linear relationships, such as how a car's value drops with age and mileage at different rates for different brands. Here is a simplified example of the idea:</p>
-                            <div id="code-snippet-1" class="bg-primary rounded-2xl overflow-hidden mb-6">
-                                <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
-                                    <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div><span class="ml-3 font-mono text-xs text-indigo-300">price_model.py (simplified)</span></div>
-                                </div>
-                                <div class="p-5 overflow-x-auto">
-                                    <pre class="font-mono text-sm leading-relaxed"><code><span class="text-purple-300">from</span> <span class="text-white">sklearn.ensemble</span> <span class="text-purple-300">import</span> <span class="text-white">RandomForestRegressor</span>
-<span class="text-purple-300">from</span> <span class="text-white">sklearn.model_selection</span> <span class="text-purple-300">import</span> <span class="text-white">train_test_split</span>
-
-<span class="text-indigo-300"># X: car features (e.g. brand, year, mileage, engine size)</span>
-<span class="text-indigo-300"># y: selling price</span>
-<span class="text-white">X_train, X_test, y_train, y_test = </span><span class="text-yellow-300">train_test_split</span><span class="text-white">(X, y, test_size=</span><span class="text-orange-300">0.2</span><span class="text-white">)</span>
-
-<span class="text-white">model = </span><span class="text-yellow-300">RandomForestRegressor</span><span class="text-white">(n_estimators=</span><span class="text-orange-300">100</span><span class="text-white">)</span>
-<span class="text-white">model.</span><span class="text-yellow-300">fit</span><span class="text-white">(X_train, y_train)</span>
-
-<span class="text-white">estimated_price = model.</span><span class="text-yellow-300">predict</span><span class="text-white">(new_car_features)</span></code></pre>
-                                </div>
-                            </div>
-                            <p class="text-base text-muted leading-relaxed">In the web application, sellers enter their car's details and receive an estimated fair price, while buyers can compare a listing's asking price against the model's estimate.</p>
+                            <p class="text-base text-muted leading-relaxed mb-5">The feature that made the biggest difference was order tracking between the floor and the kitchen. Each order item moves through simple statuses, such as pending, cooking and ready.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">When a waiter submits an order, it appears in the <strong>chef dashboard</strong> queue.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">When a chef marks a dish as ready, the <strong>waiter dashboard</strong> shows it so the food can be served.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-1 flex-shrink-0"></i><span class="text-sm text-muted leading-relaxed">The <strong>admin dashboard</strong> gives an overview of all orders, inventory levels and payments.</span></li>
+                            </ul>
+                            <p class="text-base text-muted leading-relaxed mb-5">JavaScript refreshes the dashboards so staff see updates without reloading the page manually, which replaces the shouting and paper slips with a shared, up-to-date view.</p>
                         </div>
 
                         <div id="article-section-5" class="mb-10">
@@ -297,10 +289,10 @@
                                 Key Lessons &amp; Takeaways
                             </h2>
                             <div class="space-y-4">
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-database text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Data quality matters more than the algorithm</h4><p class="text-sm text-muted leading-relaxed">Cleaning and preparing the data took a large share of the effort. A good model cannot make up for messy or inconsistent input.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plug text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Integration is its own challenge</h4><p class="text-sm text-muted leading-relaxed">Connecting a PHP web application to Python models taught me a lot about passing data between components cleanly.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-list-check text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Plan the documentation alongside the code</h4><p class="text-sm text-muted leading-relaxed">An FYP is judged on the report as well as the system. Writing chapters as I built each part kept the two consistent.</p></div></div>
-                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-users text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Design for every type of user</h4><p class="text-sm text-muted leading-relaxed">Building separate modules for buyers, sellers and administrators forced me to think through each user's workflow and permissions carefully.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-database text-accent text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Start with the data model</h4><p class="text-sm text-muted leading-relaxed">A clear, normalised database made every later feature easier to build.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-user-lock text-green-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Security belongs on the server</h4><p class="text-sm text-muted leading-relaxed">Role checks must run on every request, not just in the interface.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-table-columns text-orange-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Design dashboards around tasks</h4><p class="text-sm text-muted leading-relaxed">Each role sees only what helps them do their job, which keeps the interface simple.</p></div></div>
+                                <div class="flex items-start gap-4 p-5 bg-surface rounded-2xl border border-border"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-people-group text-purple-500 text-sm"></i></div><div><h4 class="font-bold text-primary text-sm mb-1">Talk to the users</h4><p class="text-sm text-muted leading-relaxed">Thinking through how waiters and chefs actually work shaped the order statuses and screens.</p></div></div>
                             </div>
                         </div>
 
@@ -310,7 +302,7 @@
                                 <div class="relative z-10">
                                     <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-flag-checkered text-white text-lg"></i></div>
                                     <h3 class="text-xl font-extrabold text-white mb-3">What's Next?</h3>
-                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">I'm continuing to refine the system and plan to deploy a live demo. If you'd like to know more about the project or discuss an internship opportunity, feel free to reach out.</p>
+                                    <p class="text-indigo-200 text-sm leading-relaxed max-w-lg mx-auto mb-4">This project taught me how much good database design and access control matter in real systems. If you'd like to discuss it or an internship opportunity, feel free to reach out.</p>
                                     <a href="contact.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-500 transition-all duration-200"><i class="fa-regular fa-envelope"></i> Get In Touch</a>
                                 </div>
                             </div>
@@ -319,12 +311,11 @@
                         <div id="article-tags" class="pt-6 border-t border-border">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-xs font-semibold text-muted mr-1">Tags:</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#MachineLearning</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RandomForest</span>
-                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RecommenderSystem</span>
-                                <span class="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full">#PHP</span>
-                                <span class="bg-green-50 text-green-600 text-xs font-semibold px-3 py-1.5 rounded-full">#MySQL</span>
-                                <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1.5 rounded-full">#FYP</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#PHP</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#MySQL</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#DatabaseDesign</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#RBAC</span>
+                                <span class="bg-accentSoft text-accent text-xs font-semibold px-3 py-1.5 rounded-full">#WebDev</span>
                             </div>
                         </div>
                     </article>
@@ -359,10 +350,10 @@
                     <div id="sidebar-toc" class="bg-white rounded-2xl border border-border p-6 sticky top-20">
                         <h3 class="font-bold text-primary text-sm mb-4 flex items-center gap-2"><i class="fa-solid fa-list text-accent"></i> Table of Contents</h3>
                         <nav class="space-y-1">
-                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> The Problem I Wanted to Solve</a>
-                            <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">02</span> System Architecture</a>
-                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> The Hybrid Recommender</a>
-                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Predicting Prices with Random Forest</a>
+                            <a href="#article-section-1" class="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-accentSoft text-accent text-xs font-semibold transition-all duration-200"><span class="font-mono text-accent/60 text-xs">01</span> The Problem</a>
+                            <a href="#article-section-2" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">02</span> Designing the Database</a>
+                            <a href="#article-section-3" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">03</span> Implementing Role-Based Access</a>
+                            <a href="#article-section-4" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">04</span> Real-Time Order Tracking</a>
                             <a href="#article-section-5" class="flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-accentSoft text-muted hover:text-accent text-xs font-medium transition-all duration-200"><span class="font-mono text-muted/60 text-xs">05</span> Key Lessons &amp; Takeaways</a>
                         </nav>
                         <div class="mt-5 pt-4 border-t border-border">
