@@ -177,14 +177,14 @@
                                 </div>
                             </div>
 
-                            <div id="field-attachment" class="flex flex-col gap-1.5">
+                            <div id="field-attachment" class="hidden flex flex-col gap-1.5">
                                 <label class="text-sm font-semibold text-primary">Attachment <span class="text-xs text-muted font-normal">(optional)</span></label>
                                 <div id="drop-zone" class="border-2 border-dashed border-border rounded-xl px-6 py-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-accent hover:bg-accentSoft/30 transition-all duration-200 group">
                                     <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center group-hover:bg-accent transition-colors duration-200">
                                         <i class="fa-solid fa-cloud-arrow-up text-accent group-hover:text-white text-lg transition-colors duration-200"></i>
                                     </div>
                                     <p class="text-sm text-muted text-center">Drag & drop files here or <span class="text-accent font-semibold">browse</span></p>
-                                    <p class="text-xs text-muted">Please attach files in your email app after sending</p>
+                                    <p class="text-xs text-muted">Attachments are not supported; please include links in your message</p>
                                     <input type="file" class="hidden" id="file-input" accept=".pdf,.png,.jpg,.jpeg" />
                                 </div>
                             </div>
@@ -192,7 +192,7 @@
                             <div id="field-privacy" class="flex items-start gap-3">
                                 <input type="checkbox" id="privacy" name="privacy" class="mt-0.5 w-4 h-4 accent-indigo-600 rounded cursor-pointer" />
                                 <label for="privacy" class="text-xs text-muted leading-relaxed cursor-pointer">
-                                    I understand that submitting this form opens my email app with the message, and that my details will only be used to reply to my inquiry.
+                                    I agree that my name, email and message will be sent to Tuan Mifzal Fawwaz by email and used only to reply to my inquiry.
                                 </label>
                             </div>
 
@@ -212,7 +212,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-green-800 mb-1">Message Sent Successfully!</h4>
-                                <p class="text-sm text-green-700 leading-relaxed">Your email app has opened with your message ready to send. Thanks for reaching out, I'll get back to you within 24–48 hours.</p>
+                                <p class="text-sm text-green-700 leading-relaxed">Thanks for reaching out! Your message has been sent and I'll get back to you within 24–48 hours.</p>
                             </div>
                         </div>
                     </div>
@@ -515,24 +515,43 @@
             if (contactForm && submitBtn && successMessage) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const fName = (document.getElementById('name') || {}).value || '';
-                    const fEmail = (document.getElementById('email') || {}).value || '';
-                    const fSubject = (document.getElementById('subject') || {}).value || 'Portfolio Inquiry';
-                    const fMessage = (document.getElementById('message') || {}).value || '';
-                    const body = fMessage + '\n\n— ' + fName + (fEmail ? ' (' + fEmail + ')' : '');
-                    window.location.href = 'mailto:mifzalfawwaz71@gmail.com?subject=' + encodeURIComponent(fSubject) + '&body=' + encodeURIComponent(body);
+                    const val = function(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+                    const fName = val('name'), fEmail = val('email'), fSubject = val('subject') || 'Portfolio Inquiry', fMessage = val('message');
+                    const activeTag = document.querySelector('.inquiry-tag.active-tag');
+                    const privacy = document.getElementById('privacy');
+                    if (!fName || !fEmail || !fMessage) { alert('Please fill in your name, email and message.'); return; }
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fEmail)) { alert('Please enter a valid email address.'); return; }
+                    if (privacy && !privacy.checked) { alert('Please tick the consent box before sending.'); return; }
                     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
                     submitBtn.disabled = true;
                     submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-                    setTimeout(function() {
+                    const done = function(ok) {
                         submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
                         submitBtn.disabled = false;
                         submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                        successMessage.classList.remove('hidden');
-                        contactForm.reset();
-                        if (charCount) charCount.textContent = '0 / 1000';
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 1800);
+                        if (ok) {
+                            successMessage.classList.remove('hidden');
+                            contactForm.reset();
+                            if (charCount) charCount.textContent = '0 / 1000';
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            const body = fMessage + '\n\n— ' + fName + ' (' + fEmail + ')';
+                            if (confirm('Sorry, the message could not be sent right now. Open your email app instead?')) {
+                                window.location.href = 'mailto:mifzalfawwaz71@gmail.com?subject=' + encodeURIComponent(fSubject) + '&body=' + encodeURIComponent(body);
+                            }
+                        }
+                    };
+                    fetch('https://formsubmit.co/ajax/mifzalfawwaz71@gmail.com', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: fName, email: fEmail, _replyto: fEmail,
+                            _subject: '[Portfolio] ' + fSubject,
+                            inquiry_type: activeTag ? activeTag.textContent.trim() : 'Not specified',
+                            message: fMessage, _template: 'table', _captcha: 'false'
+                        })
+                    }).then(function(r) { return r.json().then(function(j) { done(r.ok && String(j.success) === 'true'); }); })
+                      .catch(function() { done(false); });
                 });
             }
 
