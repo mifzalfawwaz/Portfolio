@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=2">
-    <link rel="shortcut icon" href="favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
     <script src="https://cdn.tailwindcss.com"></script>
     <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -62,10 +62,10 @@
                     <span class="font-mono text-accent font-semibold text-lg">/&gt;</span>
                 </div>
                 <nav id="main-nav" class="hidden md:flex items-center gap-1">
-                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Home</a>
-                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
-                    <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
-                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+                    <a href="/" class="px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft transition-all duration-200">Home</a>
+                    <a href="/about" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+                    <a href="/blog" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+                    <a href="/contact" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
                 </nav>
                 <div class="hidden md:flex items-center gap-3">
                     <a href="https://github.com/mifzalfawwaz" target="_blank" rel="noopener" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
@@ -78,10 +78,10 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border px-4 py-4 space-y-1">
-            <a href="index.html" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Home</a>
-            <a href="about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
-            <a href="blog.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
-            <a href="contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
+            <a href="/" class="block px-4 py-2 rounded-lg text-sm font-semibold text-accent bg-accentSoft">Home</a>
+            <a href="/about" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">About</a>
+            <a href="/blog" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Blog</a>
+            <a href="/contact" class="block px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-primary hover:bg-highlight transition-all duration-200">Contact</a>
             <div class="flex items-center gap-3 pt-3 border-t border-border mt-2">
                 <a href="https://github.com/mifzalfawwaz" target="_blank" rel="noopener" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-brands fa-github"></i></a>
                 <a href="mailto:tuanmifzal71@gmail.com" class="text-muted hover:text-accent transition-colors duration-200 text-lg"><i class="fa-regular fa-envelope"></i></a>
@@ -142,7 +142,7 @@
                 <div id="hero-visual" class="order-1 lg:order-2 flex justify-center lg:justify-end">
                     <div class="relative">
                         <div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100">
-                            <img src="Fawwaz.jpg" alt="Mifzal Fawwaz" class="w-full h-full object-cover" />
+                            <img src="/Fawwaz.jpg" alt="Mifzal Fawwaz" class="w-full h-full object-cover" />
                         </div>
                         <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 flex items-center gap-3">
                             <div class="w-10 h-10 bg-accentSoft rounded-xl flex items-center justify-center">
@@ -408,25 +408,25 @@
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">From the Blog</h2>
                     <p class="text-muted mt-3 max-w-xl">Write-ups on the projects I build and the lessons I learn along the way.</p>
                 </div>
-                <a href="blog.html" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all duration-200 whitespace-nowrap">
+                <a href="/blog" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all duration-200 whitespace-nowrap">
                     Read all posts <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div id="blog-card-1" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
                     <div class="h-44 overflow-hidden">
-                        <a href="blog-detail.html" class="w-full h-full bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-car-side text-4xl"></i><i class="fa-solid fa-brain text-4xl"></i><i class="fa-solid fa-tags text-4xl"></i></a>
+                        <a href="/blog-car-recommendation" class="w-full h-full bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-car-side text-4xl"></i><i class="fa-solid fa-brain text-4xl"></i><i class="fa-solid fa-tags text-4xl"></i></a>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">Project Docs</span>
                             <span class="text-muted text-xs">Aug 12, 2026</span>
                         </div>
-                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="blog-detail.html">How I Built a Car Recommendation &amp; Pricing System with Machine Learning</a></h3>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="/blog-car-recommendation">How I Built a Car Recommendation &amp; Pricing System with Machine Learning</a></h3>
                         <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">A walkthrough of my Final Year Project: collaborative filtering recommendations and a Random Forest price model in a Laravel and MySQL web application.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-border">
                             <div class="flex items-center gap-2">
-                                <img src="Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <img src="/Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
                                 <span class="text-xs font-medium text-muted">Tuan Mifzal Fawwaz</span>
                             </div>
                             <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 6 min read</span>
@@ -435,18 +435,18 @@
                 </div>
                 <div id="blog-card-2" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
                     <div class="h-44 overflow-hidden">
-                        <a href="blog-food-delivery.html" class="w-full h-full bg-gradient-to-br from-orange-100 via-amber-50 to-rose-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-user text-4xl"></i><i class="fa-solid fa-store text-4xl"></i><i class="fa-solid fa-motorcycle text-4xl"></i></a>
+                        <a href="/blog-food-delivery" class="w-full h-full bg-gradient-to-br from-orange-100 via-amber-50 to-rose-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-user text-4xl"></i><i class="fa-solid fa-store text-4xl"></i><i class="fa-solid fa-motorcycle text-4xl"></i></a>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">Project Docs</span>
                             <span class="text-muted text-xs">Jul 22, 2026</span>
                         </div>
-                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="blog-food-delivery.html">Building a Food Delivery System with REST APIs &amp; SOA</a></h3>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="/blog-food-delivery">Building a Food Delivery System with REST APIs &amp; SOA</a></h3>
                         <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">How customers, restaurants and riders communicate through RESTful services in a Service-Oriented Architecture project.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-border">
                             <div class="flex items-center gap-2">
-                                <img src="Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <img src="/Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
                                 <span class="text-xs font-medium text-muted">Tuan Mifzal Fawwaz</span>
                             </div>
                             <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 6 min read</span>
@@ -455,18 +455,18 @@
                 </div>
                 <div id="blog-card-3" class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:shadow-indigo-50 hover:-translate-y-0.5 transition-all duration-300 group">
                     <div class="h-44 overflow-hidden">
-                        <a href="blog-restaurant.html" class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-sky-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-user-tie text-4xl"></i><i class="fa-solid fa-bell-concierge text-4xl"></i><i class="fa-solid fa-kitchen-set text-4xl"></i></a>
+                        <a href="/blog-restaurant" class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-sky-100 flex items-center justify-center gap-4 text-accent group-hover:scale-105 transition-transform duration-500"><i class="fa-solid fa-user-tie text-4xl"></i><i class="fa-solid fa-bell-concierge text-4xl"></i><i class="fa-solid fa-kitchen-set text-4xl"></i></a>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="bg-accentSoft text-accent text-xs font-semibold px-2.5 py-1 rounded-full">Project Docs</span>
                             <span class="text-muted text-xs">Feb 17, 2026</span>
                         </div>
-                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="blog-restaurant.html">Restaurant Management System: Role-Based Access for Admin, Waiter &amp; Chef</a></h3>
+                        <h3 class="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"><a href="/blog-restaurant">Restaurant Management System: Role-Based Access for Admin, Waiter &amp; Chef</a></h3>
                         <p class="text-muted text-sm leading-relaxed mb-4 line-clamp-2">Database design and role-based dashboards that give each restaurant role exactly what they need.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-border">
                             <div class="flex items-center gap-2">
-                                <img src="Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
+                                <img src="/Fawwaz.jpg" class="w-6 h-6 rounded-full object-cover" alt="Author" />
                                 <span class="text-xs font-medium text-muted">Tuan Mifzal Fawwaz</span>
                             </div>
                             <span class="text-xs text-muted flex items-center gap-1"><i class="fa-regular fa-clock"></i> 6 min read</span>
@@ -524,10 +524,10 @@
                 <div id="footer-nav">
                     <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="index.html" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
-                        <li><a href="about.html" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
-                        <li><a href="blog.html" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
-                        <li><a href="contact.html" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
+                        <li><a href="/" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Home</a></li>
+                        <li><a href="/about" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">About Me</a></li>
+                        <li><a href="/blog" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Blog</a></li>
+                        <li><a href="/contact" class="text-slate-400 text-sm hover:text-accent transition-colors duration-200">Contact</a></li>
                     </ul>
                 </div>
                 <div id="footer-projects">
